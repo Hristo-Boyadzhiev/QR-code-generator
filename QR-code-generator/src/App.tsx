@@ -1,6 +1,6 @@
-import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
+import QRCodeGenerator from "./components/QRCodeGenerator";
 import "./App.css";
 
 export default function App() {
-  return <QrCodeScannerIcon />;
+  return <QRCodeGenerator />;
 }
