@@ -12,6 +12,9 @@ This app is under development.
 
 ### Libraries
 - React;
-- Material UI for building the application;
 - React-hook-form for managing forms;
-- Yup for form validation;
+- Yup for form validation.
+
+### Approaches & Techniques
+- Semantic HTML;
+- CSS Modules.
