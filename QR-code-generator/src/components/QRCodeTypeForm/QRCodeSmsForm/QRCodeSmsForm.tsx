@@ -16,7 +16,7 @@ export default function QRCodeSmsForm() {
             control={control}
             defaultValue=""
             render={({ field }) => (
-              <select {...field}>
+              <select {...field} required>
                 <option value="" disabled>
                   Select country code
                 </option>
@@ -48,6 +48,7 @@ export default function QRCodeSmsForm() {
                 type="text"
                 id="phoneNumber"
                 placeholder="Enter phone number"
+                required
                 onChange={(e) => {
                   const value = e.target.value;
                   if (/^\d*$/.test(value)) {
