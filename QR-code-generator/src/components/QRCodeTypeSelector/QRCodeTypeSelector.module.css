@@ -1,0 +1,5 @@
+.qr-code-type-selector-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
