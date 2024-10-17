@@ -19,3 +19,7 @@ This app is under development.
 ### Approaches & Techniques
 - Semantic HTML;
 - CSS Modules.
+
+## License
+
+This project uses the **`qrcode.react`** library, which is licensed under the MIT License. You can find the license [here](https://github.com/zpao/qrcode.react/blob/master/LICENSE).
