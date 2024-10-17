@@ -26,6 +26,10 @@ export default function QRCodeTypeForm({ qrCodeType }: QRCodeTypeFormProps) {
     console.log(data);
   };
 
+  const handleReset = () => {
+    methods.reset();
+  };
+
   //RHFProvider - Global context for react-hook-form methods
   return (
     <RHFProvider {...methods}>
@@ -35,7 +39,12 @@ export default function QRCodeTypeForm({ qrCodeType }: QRCodeTypeFormProps) {
       >
         {formContent}
 
-        <button type="submit">generate qr code</button>
+        <div className={styles["buttons"]}>
+          <button type="button" onClick={handleReset}>
+            reset
+          </button>
+          <button type="submit">generate qr code</button>
+        </div>
       </form>
     </RHFProvider>
   );

@@ -3,3 +3,8 @@
     flex-direction: column;
     gap: 1em;
 }
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
