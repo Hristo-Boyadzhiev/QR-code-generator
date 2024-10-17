@@ -24,5 +24,9 @@ This app is under development.
 - CSS Modules.
 
 ## License
-This project uses several libraries that are licensed under the MIT License, as well as TypeScript, which is licensed under the Apache License 2.0. This allows for free use, modification, and distribution of the code, provided that the original license and copyright notice are included in any copies or substantial portions of the software.
+This project uses several libraries that are licensed under the MIT License, including React, qrcode.react, React-hook-form, and Yup. Additionally, TypeScript is licensed under the Apache License 2.0.
+
+MIT License allows for free use, modification, and distribution of the code, as long as the original license text and copyright notice are included in all copies or substantial portions of the software.
+
+Apache License 2.0 permits users to use, modify, and distribute the software, but it requires that you include a copy of the license in any distribution and provide notice of any modifications made to the original code.
 
