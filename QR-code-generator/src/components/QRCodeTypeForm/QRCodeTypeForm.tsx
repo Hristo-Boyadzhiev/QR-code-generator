@@ -5,9 +5,10 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
-import { probaFormData, probaSchema } from "../../schemas/Proba";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useGetFormContent from "../../hooks/useGetFormContent";
+import getSchema from "../../utils/getSchema";
+import { FormDataType } from "../../types/FormDataType";
 
 interface QRCodeTypeFormProps {
   qrCodeType: QRCodeType;
@@ -15,13 +16,13 @@ interface QRCodeTypeFormProps {
 
 export default function QRCodeTypeForm({ qrCodeType }: QRCodeTypeFormProps) {
   const formContent = useGetFormContent({ qrCodeType });
-  // TODO: динамично да се взима probaFormData и probaSchema спрямо избора. Това е за sms
-  const methods = useForm<probaFormData>({
-    resolver: yupResolver(probaSchema),
+  const schema = getSchema({ qrCodeType });
+  const methods = useForm<FormDataType>({
+    resolver: schema ? yupResolver(schema) : undefined,
     mode: "onChange", //validation on change
   });
 
-  const handleFormSubmit: SubmitHandler<probaFormData> = (data) => {
+  const handleFormSubmit: SubmitHandler<FormDataType> = (data) => {
     console.log(data);
   };
 

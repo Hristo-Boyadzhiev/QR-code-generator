@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-export const probaSchema = yup.object({
+export const smsSchema = yup.object({
   countryCode: yup.string().required("The country code is required"),
   phoneNumber: yup
     .string()
@@ -9,7 +9,7 @@ export const probaSchema = yup.object({
   message: yup.string(),
 });
 
-export interface probaFormData extends yup.InferType<typeof probaSchema> {
+export interface smsFormData extends yup.InferType<typeof smsSchema> {
   countryCode: string;
   phoneNumber: string;
 }
