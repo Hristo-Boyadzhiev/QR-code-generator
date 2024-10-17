@@ -12,6 +12,7 @@ This app is under development.
 
 ### Libraries
 - React;
+- qrcode.react for generate QR codes;
 - React-hook-form for managing forms;
 - Yup for form validation.
 
