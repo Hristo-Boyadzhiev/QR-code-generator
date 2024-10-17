@@ -76,12 +76,20 @@ export default function QRCodeSmsForm() {
           <textarea
             {...field}
             id="message"
+            required
             cols={30}
             rows={5}
             placeholder="Enter your message"
           />
         )}
       />
+      {errors.message && errors.message.message && (
+        <p className={styles["error-message"]}>
+          {typeof errors.message.message === "string"
+            ? errors.message.message
+            : ""}
+        </p>
+      )}
     </article>
   );
 }

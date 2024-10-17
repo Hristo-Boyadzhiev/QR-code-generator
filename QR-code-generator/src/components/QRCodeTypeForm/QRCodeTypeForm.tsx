@@ -23,7 +23,11 @@ export default function QRCodeTypeForm({ qrCodeType }: QRCodeTypeFormProps) {
   });
 
   const handleFormSubmit: SubmitHandler<FormDataType> = (data) => {
-    console.log(data);
+    const smsLink = `sms:${data.countryCode}${
+      data.phoneNumber
+    }?body=${encodeURIComponent(data.message)}`;
+    // Тук можеш да подадеш линка на компонент за генериране на QR код
+    console.log(smsLink);
   };
 
   const handleReset = () => {

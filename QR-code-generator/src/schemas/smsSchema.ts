@@ -6,10 +6,11 @@ export const smsSchema = yup.object({
     .string()
     .required("The phone number is required")
     .matches(/^\d{2,}$/, "Phone number must be at least 2 digits long"),
-  message: yup.string(),
+  message: yup.string().required("The message is required"),
 });
 
 export interface smsFormData extends yup.InferType<typeof smsSchema> {
   countryCode: string;
   phoneNumber: string;
+  message: string;
 }
