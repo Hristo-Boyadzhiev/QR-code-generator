@@ -1,4 +1,5 @@
 import { FormDataType } from "../types/FormDataType";
+import { isSmsFormData, isUrlFormData } from "../utils/typeGuards";
 import { useQRCodeGeneratorContext } from "./useQRCodeGeneratorContext";
 
 export default function useGenerateLink() {
@@ -7,18 +8,32 @@ export default function useGenerateLink() {
   function generateLink(data: FormDataType) {
     switch (qrCodeType) {
       case "SMS":
-        const messagePart = data.message
-          ? `&body=${encodeURIComponent(data.message)}`
-          : "";
+        if (isSmsFormData(data)) {
+          const messagePart = data.message
+            ? `&body=${encodeURIComponent(data.message)}`
+            : "";
 
-        const generatedSmsLink = `sms:${data.countryCode}${data.phoneNumber}${messagePart}`;
-        setQrCodeLink(generatedSmsLink);
+          const generatedSmsLink = `sms:${data.countryCode}${data.phoneNumber}${messagePart}`;
+          setQrCodeLink(generatedSmsLink);
+        } else {
+          throw Error("Invalid SMS data");
+        }
         break;
+
       case "URL":
+        if (isUrlFormData(data)) {
+          const generatedUrlLink = encodeURIComponent(data.url);
+          setQrCodeLink(generatedUrlLink);
+        } else {
+          throw Error("Invalid URL data");
+        }
         break;
+
       default:
+        console.error("Unknown QR code type");
         break;
     }
   }
+
   return generateLink;
 }

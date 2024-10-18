@@ -9,7 +9,7 @@ export const smsSchema = yup.object({
   message: yup.string(),
 });
 
-export interface smsFormData extends yup.InferType<typeof smsSchema> {
+export interface SmsFormData extends yup.InferType<typeof smsSchema> {
   countryCode: string;
   phoneNumber: string;
 }

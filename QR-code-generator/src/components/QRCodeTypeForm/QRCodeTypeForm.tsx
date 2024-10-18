@@ -6,28 +6,40 @@ import {
 } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useGetFormContent from "../../hooks/useGetFormContent";
-import getSchema from "../../utils/getSchema";
-import { FormDataType } from "../../types/FormDataType";
 import useGenerateLink from "../../hooks/useGenerateLink";
 import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
+import { FormDataType } from "../../types/FormDataType";
+import useGetSchema from "../../hooks/useGetSchema";
+import { ObjectSchema } from "yup";
+import React from "react";
 
 export default function QRCodeTypeForm() {
-  const generateLink = useGenerateLink();
-  const { setQrCodeLink } = useQRCodeGeneratorContext();
   const formContent = useGetFormContent();
-  const schema = getSchema();
+  const schema = useGetSchema();
+  const generateLink = useGenerateLink();
+  const { setQrCodeLink, setShowQrCode, qrCodeType } =
+    useQRCodeGeneratorContext();
+
   const methods = useForm<FormDataType>({
-    resolver: schema ? yupResolver(schema) : undefined,
+    resolver: schema
+      ? yupResolver(schema as ObjectSchema<FormDataType>)
+      : undefined,
     // mode: "onChange", //validation on change
   });
 
+  React.useEffect(() => {
+    methods.reset();
+  }, [qrCodeType]);
+
   const handleFormSubmit: SubmitHandler<FormDataType> = (data) => {
     generateLink(data);
+    setShowQrCode(true);
   };
 
   const handleReset = () => {
     methods.reset();
     setQrCodeLink(null);
+    setShowQrCode(false);
   };
 
   //RHFProvider - Global context for react-hook-form methods
@@ -39,12 +51,12 @@ export default function QRCodeTypeForm() {
       >
         {formContent}
 
-        <div className={styles["buttons"]}>
+        <article className={styles["buttons"]}>
           <button type="button" onClick={handleReset}>
             reset
           </button>
           <button type="submit">generate qr code</button>
-        </div>
+        </article>
       </form>
     </RHFProvider>
   );

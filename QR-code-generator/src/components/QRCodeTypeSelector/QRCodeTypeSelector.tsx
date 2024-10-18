@@ -6,11 +6,15 @@ import { QRCodeTypes } from "../../enums/QRCodeTypes";
 import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
 
 export default function QRCodeTypeSelector() {
-  const { qrCodeType, setQrCodeType } = useQRCodeGeneratorContext();
+  const { qrCodeType, setQrCodeType, setShowQrCode, setQrCodeLink } =
+    useQRCodeGeneratorContext();
 
   const handleQRCodeType = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOption = event.target.value as QRCodeType;
+
     setQrCodeType(selectedOption);
+    setQrCodeLink("");
+    setShowQrCode(false);
   };
 
   return (

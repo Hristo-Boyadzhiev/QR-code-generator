@@ -4,7 +4,7 @@ import styles from "./QRCodeGenerator.module.css";
 import QRCodeTypeSelector from "./QRCodeTypeSelector/QRCodeTypeSelector";
 
 export default function QRCodeGenerator() {
-  const { qrCodeLink } = useQRCodeGeneratorContext();
+  const { qrCodeLink, showQrCode } = useQRCodeGeneratorContext();
 
   // TODO: Може да добавя бутон за customization на QR code-размер, цвят и т.н.
   return (
@@ -13,7 +13,7 @@ export default function QRCodeGenerator() {
         <section className={styles["content-container"]}>
           <QRCodeTypeSelector />
         </section>
-        {qrCodeLink && (
+        {showQrCode && qrCodeLink && (
           <section className={styles["qr-code-container"]}>
             <QRCodeSVG
               value={qrCodeLink} // Стойността на QR кода

@@ -1,0 +1,12 @@
+.qr-code-url-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+  .error-message {
+    color: red;
+    /* max-width: 200px; */
+    white-space: normal; 
+    overflow-wrap: break-word;
+}
