@@ -20,7 +20,7 @@ This app is under development.
 - Yup: A JavaScript schema builder for value parsing and validation. It is used under the MIT License. You can find it [here](https://github.com/jquense/yup/blob/master/LICENSE.md).
 
 ### Fonts
-- **Montserrat:** This project uses the Montserrat font, which is licensed under the [SIL Open Font License (OFL) 1.1](https://scripts.sil.org/cms/scripts/page.php?item_id=OFL). You can learn more about the Montserrat font and its license on [Google Fonts](https://fonts.google.com/specimen/Montserrat).
+- **Montserrat:** This project uses the Montserrat font, which is licensed under the [SIL Open Font License (OFL) 1.1](https://scripts.sil.org/cms/scripts/page.php?item_id=OFL). You can learn more about the Montserrat font and its license on [Google Fonts](https://fonts.google.com/specimen/Montserrat/license).
 
 ### Approaches & Techniques
 - Semantic HTML;
