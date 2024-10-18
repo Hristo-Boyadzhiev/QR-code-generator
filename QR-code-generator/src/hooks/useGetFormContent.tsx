@@ -1,13 +1,8 @@
 import QRCodeSmsForm from "../components/QRCodeTypeForm/QRCodeSmsForm/QRCodeSmsForm";
-import { QRCodeType } from "../types/QRCodeType";
+import { useQRCodeGeneratorContext } from "./useQRCodeGeneratorContext";
 
-interface UseGetFormContentProps {
-  qrCodeType: QRCodeType;
-}
-
-export default function useGetFormContent({
-  qrCodeType,
-}: UseGetFormContentProps) {
+export default function useGetFormContent() {
+  const { qrCodeType } = useQRCodeGeneratorContext();
   switch (qrCodeType) {
     case "SMS":
       return <QRCodeSmsForm />;

@@ -3,9 +3,10 @@ import styles from "./QRCodeTypeSelector.module.css";
 import QRCodeTypeForm from "../QRCodeTypeForm/QRCodeTypeForm";
 import { QRCodeType } from "../../types/QRCodeType";
 import { QRCodeTypes } from "../../enums/QRCodeTypes";
+import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
 
 export default function QRCodeTypeSelector() {
-  const [qrCodeType, setQrCodeType] = React.useState<QRCodeType>("");
+  const { qrCodeType, setQrCodeType } = useQRCodeGeneratorContext();
 
   const handleQRCodeType = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOption = event.target.value as QRCodeType;
@@ -14,7 +15,11 @@ export default function QRCodeTypeSelector() {
 
   return (
     <article className={styles["qr-code-type-selector-container"]}>
-      <select name="qrCodeType" value={qrCodeType} onChange={handleQRCodeType}>
+      <select
+        name="qrCodeType"
+        value={qrCodeType || ""}
+        onChange={handleQRCodeType}
+      >
         <option value="" disabled>
           Select QR code type
         </option>
@@ -24,7 +29,7 @@ export default function QRCodeTypeSelector() {
           </option>
         ))}
       </select>
-      {qrCodeType !== "" && <QRCodeTypeForm qrCodeType={qrCodeType} />}
+      {qrCodeType && <QRCodeTypeForm />}
     </article>
   );
 }

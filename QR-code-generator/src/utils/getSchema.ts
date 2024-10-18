@@ -1,11 +1,8 @@
+import { useQRCodeGeneratorContext } from "../hooks/useQRCodeGeneratorContext";
 import { smsSchema } from "../schemas/smsSchema";
-import { QRCodeType } from "../types/QRCodeType";
 
-interface GetSchemaProps {
-  qrCodeType: QRCodeType;
-}
-
-export default function getSchema({ qrCodeType }: GetSchemaProps) {
+export default function getSchema() {
+  const { qrCodeType } = useQRCodeGeneratorContext();
   switch (qrCodeType) {
     case "SMS":
       return smsSchema;

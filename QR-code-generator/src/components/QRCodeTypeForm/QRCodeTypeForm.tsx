@@ -1,5 +1,4 @@
 import styles from "./QRCodeTypeForm.module.css";
-import { QRCodeType } from "../../types/QRCodeType";
 import {
   FormProvider as RHFProvider,
   SubmitHandler,
@@ -9,29 +8,26 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import useGetFormContent from "../../hooks/useGetFormContent";
 import getSchema from "../../utils/getSchema";
 import { FormDataType } from "../../types/FormDataType";
+import useGenerateLink from "../../hooks/useGenerateLink";
+import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
 
-interface QRCodeTypeFormProps {
-  qrCodeType: QRCodeType;
-}
-
-export default function QRCodeTypeForm({ qrCodeType }: QRCodeTypeFormProps) {
-  const formContent = useGetFormContent({ qrCodeType });
-  const schema = getSchema({ qrCodeType });
+export default function QRCodeTypeForm() {
+  const generateLink = useGenerateLink();
+  const { setQrCodeLink } = useQRCodeGeneratorContext();
+  const formContent = useGetFormContent();
+  const schema = getSchema();
   const methods = useForm<FormDataType>({
     resolver: schema ? yupResolver(schema) : undefined,
-    mode: "onChange", //validation on change
+    // mode: "onChange", //validation on change
   });
 
   const handleFormSubmit: SubmitHandler<FormDataType> = (data) => {
-    const smsLink = `sms:${data.countryCode}${
-      data.phoneNumber
-    }?body=${encodeURIComponent(data.message)}`;
-    // Тук можеш да подадеш линка на компонент за генериране на QR код
-    console.log(smsLink);
+    generateLink(data);
   };
 
   const handleReset = () => {
     methods.reset();
+    setQrCodeLink(null);
   };
 
   //RHFProvider - Global context for react-hook-form methods

@@ -18,10 +18,10 @@ export default function QRCodeSmsForm() {
             render={({ field }) => (
               <select {...field} required>
                 <option value="" disabled>
-                  Select country code
+                  Select country code *
                 </option>
                 {countryCodes.map((country) => (
-                  <option key={country.code} value={country.code}>
+                  <option key={country.code} value={country.phone}>
                     {country.code} ({country.phone})
                   </option>
                 ))}
@@ -47,7 +47,7 @@ export default function QRCodeSmsForm() {
                 {...field}
                 type="text"
                 id="phoneNumber"
-                placeholder="Enter phone number"
+                placeholder="Enter phone number *"
                 required
                 onChange={(e) => {
                   const value = e.target.value;
@@ -76,20 +76,12 @@ export default function QRCodeSmsForm() {
           <textarea
             {...field}
             id="message"
-            required
             cols={30}
             rows={5}
             placeholder="Enter your message"
           />
         )}
       />
-      {errors.message && errors.message.message && (
-        <p className={styles["error-message"]}>
-          {typeof errors.message.message === "string"
-            ? errors.message.message
-            : ""}
-        </p>
-      )}
     </article>
   );
 }

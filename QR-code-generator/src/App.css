@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -9,48 +11,60 @@
   
   html {
     box-sizing: border-box;
-    background: #2D2D2D;
-    font-family: 'Barlow Semi Condensed';
+    background: #313439;
+    font-family: 'Montserrat';
     font-weight: 600;
     text-transform: uppercase;
   }
   
-  body, input, button, textarea {
+  body, input, button, select, textarea {
     font: inherit;
   }
 
-  button {
-    border-radius: 0.5em;
-    padding: 0.7em;
-    text-transform: uppercase;
-    border: 2px;
-    background: #00BFFF;
-    transition: background 0.3s ease;
+select {
+  cursor: pointer;
 }
 
-select {
-  padding: 0.7em 0 0.7em 0.3em;
-  font-size: 16px;
-  color: #333;
-  background-color: #f9f9f9;
-  border: 2px solid #d1d5db;
-  border-radius: 0.5em;
-  cursor: pointer;
+select, input, textarea, button {
+  background: #313439;
+  color: lightgrey;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 0.7em;
   transition: border-color 0.3s ease;
 }
 
-select:hover {
-  border-color: #93c5fd;
-  background-color: #e0f2fe; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+textarea, button {
+  border: 1px solid grey;
+  border-radius: 0.5em;
 }
 
-select:focus {
-  outline: none;
-  border-color: #3b82f6; 
+button {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
+
+select:hover, 
+input:hover,
+textarea:hover,
 button:hover {
-    background: #007ACC;
+  border: 1px solid grey;
+  border-radius: 0.5em;
+  background-color: hsl(210, 10%, 30%);
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: white; 
+  opacity: 0.7;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: lightgrey; 
 }
 

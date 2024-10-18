@@ -5,8 +5,18 @@
     height: 100vh;
 }
 
-.content-container {
-    padding: 2em;
+.content-and-qr-code-container {
+    display: flex;
+    align-items: center;
     border-radius: 0.5em;
-    background: lightgray
+   border: 1px solid grey
 }
+
+.content-container, .qr-code-container {
+    padding: 2em;
+}
+
+.qr-code-container {
+    border-left: 1px solid grey;
+}
+

@@ -1,6 +1,11 @@
 import QRCodeGenerator from "./components/QRCodeGenerator";
 import "./App.css";
+import { QRCodeGeneratorProvider } from "./contexts/QRCodeGeneratorContext";
 
 export default function App() {
-  return <QRCodeGenerator />;
+  return (
+    <QRCodeGeneratorProvider>
+      <QRCodeGenerator />
+    </QRCodeGeneratorProvider>
+  );
 }
