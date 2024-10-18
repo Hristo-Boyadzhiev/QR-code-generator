@@ -33,5 +33,5 @@ MIT License allows for free use, modification, and distribution of the code, as 
 
 Apache License 2.0 permits users to use, modify, and distribute the software, but it requires that you include a copy of the license in any distribution and provide notice of any modifications made to the original code.
 
-Google Fonts, including **Montserrat**, are licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/), which allows free use, modification, and distribution of the fonts, as long as the original license and copyright notice are included.
+Montserrat is licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/), which allows free use, modification, and distribution of the fonts, as long as the original license and copyright notice are included.
 
