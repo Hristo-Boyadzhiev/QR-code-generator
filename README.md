@@ -27,7 +27,7 @@ This app is under development.
 - CSS Modules.
 
 ## License
-This project uses several libraries that are licensed under the MIT License, including Vite, React, qrcode.react, React-hook-form, and Yup. Additionally, TypeScript is licensed under the Apache License 2.0.
+This project uses several libraries that are licensed under the MIT License, including Vite, React, qrcode.react, React-hook-form, and Yup. TypeScript is licensed under the Apache License 2.0. Montserrat is licensed under the SIL Open Font License, Version 1.1
 
 MIT License allows for free use, modification, and distribution of the code, as long as the original license text and copyright notice are included in all copies or substantial portions of the software.
 
