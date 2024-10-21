@@ -13,7 +13,7 @@ This app is under development.
 ### Libraries
 - React: A JavaScript library for building user interfaces. It is used under the MIT License. You can find it [here](https://github.com/facebook/react/blob/main/LICENSE);
   
-- Qr-code-styling-react: A React component for generating styled QR codes. It is used under the MIT License. You can find the license [here](https://github.com/davidshimjs/qrcodejs/blob/master/LICENSE).
+- Qr-code-styling-react: A React component for generating styled QR codes. It is used under the MIT License. You can find the license [here](https://github.com/kozakdenys/qr-code-styling/blob/master/LICENSE).
   
 - React-hook-form: A library for managing forms in React. It is used under the MIT License. You can find it [here](https://github.com/react-hook-form/react-hook-form/blob/master/LICENSE);
   
