@@ -1,6 +1,8 @@
+import QRCodeEmailForm from "../components/QRCodeTypeForm/QRCodeEmailForm/QRCodeEmailForm";
 import QRCodePhoneNumberForm from "../components/QRCodeTypeForm/QRCodePhoneForm/QRCodePhoneNumberForm";
 import QRCodeSmsForm from "../components/QRCodeTypeForm/QRCodeSmsForm/QRCodeSmsForm";
 import QRCodeURLForm from "../components/QRCodeTypeForm/QRCodeURLForm/QRCodeURLForm";
+import QRCodeWiFiForm from "../components/QRCodeTypeForm/QRCodeWiFiForm/QrCodeWiFiForm";
 import { useQRCodeGeneratorContext } from "./useQRCodeGeneratorContext";
 
 export default function useGetFormContent() {
@@ -13,11 +15,10 @@ export default function useGetFormContent() {
     case "PhoneNumber":
       return <QRCodePhoneNumberForm />;
     case "Email":
-      break;
-    case "Wifi":
-      break;
-
+      return <QRCodeEmailForm />;
+    case "WiFi":
+      return <QRCodeWiFiForm />;
     default:
-      break;
+      throw Error(`Unknown QR code type: ${qrCodeType}`);
   }
 }

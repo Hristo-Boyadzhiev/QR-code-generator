@@ -5,6 +5,7 @@ import QRCodeTypeSelector from "./QRCodeTypeSelector/QRCodeTypeSelector";
 
 export default function QRCodeGenerator() {
   const { qrCodeType, qrCodeLink } = useQRCodeGeneratorContext();
+  console.log(qrCodeLink);
 
   // TODO: Може да добавя бутон за customization на QR code-размер, цвят и т.н.
   return (
