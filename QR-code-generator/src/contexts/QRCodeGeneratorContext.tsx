@@ -6,8 +6,6 @@ interface QRCodeGeneratorContextType {
   setQrCodeType: React.Dispatch<React.SetStateAction<QRCodeType | null>>;
   qrCodeLink: string | null;
   setQrCodeLink: React.Dispatch<React.SetStateAction<string | null>>;
-  showQrCode: boolean;
-  setShowQrCode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const QRCodeGeneratorContext = createContext<
@@ -19,7 +17,6 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [qrCodeType, setQrCodeType] = React.useState<QRCodeType | null>(null);
   const [qrCodeLink, setQrCodeLink] = React.useState<string | null>(null);
-  const [showQrCode, setShowQrCode] = React.useState(false);
 
   return (
     <QRCodeGeneratorContext.Provider
@@ -28,8 +25,6 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
         setQrCodeType,
         qrCodeLink,
         setQrCodeLink,
-        showQrCode,
-        setShowQrCode,
       }}
     >
       {children}

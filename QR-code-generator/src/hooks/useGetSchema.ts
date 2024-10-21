@@ -1,4 +1,5 @@
 import { useQRCodeGeneratorContext } from "../hooks/useQRCodeGeneratorContext";
+import { phoneNumberSchema } from "../schemas/phoneNumberSchema";
 import { smsSchema } from "../schemas/smsSchema";
 import { urlSchema } from "../schemas/urlSchema";
 
@@ -9,8 +10,8 @@ export default function useGetSchema() {
       return smsSchema;
     case "URL":
       return urlSchema;
-    // case "Phone":
-    //   break;
+    case "PhoneNumber":
+      return phoneNumberSchema;
     // case "Email":
     //   break;
     // case "Wifi":

@@ -17,8 +17,7 @@ export default function QRCodeTypeForm() {
   const formContent = useGetFormContent();
   const schema = useGetSchema();
   const generateLink = useGenerateLink();
-  const { setQrCodeLink, setShowQrCode, qrCodeType } =
-    useQRCodeGeneratorContext();
+  const { setQrCodeLink, qrCodeType } = useQRCodeGeneratorContext();
 
   const methods = useForm<FormDataType>({
     resolver: schema
@@ -33,13 +32,11 @@ export default function QRCodeTypeForm() {
 
   const handleFormSubmit: SubmitHandler<FormDataType> = (data) => {
     generateLink(data);
-    setShowQrCode(true);
   };
 
   const handleReset = () => {
     methods.reset();
     setQrCodeLink(null);
-    setShowQrCode(false);
   };
 
   //RHFProvider - Global context for react-hook-form methods
