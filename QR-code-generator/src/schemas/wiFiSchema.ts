@@ -1,7 +1,11 @@
 import * as yup from "yup";
+import { encryptionTypes } from "../enums/EncryptionTypes";
 
 export const wiFiSchema = yup.object({
-  encryptionType: yup.string().required("The encryption type is required"),
+  encryptionType: yup
+    .string()
+    .oneOf(Object.values(encryptionTypes), "Invalid encryption type")
+    .required("The encryption type is required"),
   networkName: yup.string().required("The network name is required"),
   password: yup.string().when("encryptionType", {
     is: (value: any) => value !== "None",
@@ -14,7 +18,7 @@ export const wiFiSchema = yup.object({
 });
 
 export interface WiFiFormData extends yup.InferType<typeof wiFiSchema> {
-  encryptionType: string;
+  encryptionType: encryptionTypes;
   networkName: string;
   password?: string;
 }
