@@ -1,0 +1,13 @@
+.customize-container {
+    color: lightgrey;
+}
+
+.customize-content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.customize-content-container div {
+    display: flex;
+    gap: 0.5em;
+}

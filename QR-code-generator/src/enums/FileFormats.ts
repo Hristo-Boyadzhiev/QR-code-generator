@@ -1,5 +1,5 @@
 export enum FileFormats {
-  png = "png",
-  jpeg = "jpeg",
-  svg = "svg",
+  PNG = "png",
+  JPEG = "jpeg",
+  SVG = "svg",
 }

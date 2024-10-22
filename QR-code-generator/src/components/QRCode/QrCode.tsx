@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import QRCodeStyling, { Options } from "qr-code-styling";
+import QRCodeStyling, { DotType, Options } from "qr-code-styling";
 import { QRCodeType } from "../../types/QRCodeType";
 import { FileFormats } from "../../enums/FileFormats";
 import { FileFormat } from "../../types/FileFormat";
 import styles from "./QRCode.module.css";
+import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
 
 interface QRCodeProps {
   type: QRCodeType;
@@ -11,6 +12,7 @@ interface QRCodeProps {
   width?: number;
   height?: number;
   dotColor?: string;
+  dotType?: DotType;
   backgroundColor?: string;
 }
 
@@ -21,6 +23,7 @@ export default function QRCode({
   width = 300,
   height = 300,
   dotColor = "black",
+  dotType = "rounded",
   backgroundColor = "white",
 }: QRCodeProps) {
   const qrCodeRef = useRef<HTMLDivElement | null>(null);
@@ -28,6 +31,9 @@ export default function QRCode({
   const [fileFormat, setFileFormat] = React.useState<FileFormat | undefined>(
     undefined
   );
+  const { setShowCustomizeForm } = useQRCodeGeneratorContext();
+
+  // TODO: Когато добавям нови QR code customize да не забравям да ги добавям в масива на useEffect
 
   useEffect(() => {
     if (!qrCodeRef.current) return;
@@ -36,14 +42,13 @@ export default function QRCode({
       throw Error("Content is required to generate a QR code");
     }
 
-    // Определяне на опции за QR кода
     const options: Options = {
       width,
       height,
       data: content,
       dotsOptions: {
         color: dotColor,
-        type: "rounded",
+        type: dotType,
       },
       backgroundOptions: {
         color: backgroundColor,
@@ -58,13 +63,17 @@ export default function QRCode({
         qrCodeRef.current.innerHTML = "";
       }
     };
-  }, [type, content, width, height, dotColor, backgroundColor]);
+  }, [type, content, width, height, dotColor, dotType, backgroundColor]);
 
-  const downloadQRCode = () => {
+  function downloadQRCode() {
     if (qrCodeInstance.current) {
       qrCodeInstance.current.download({ extension: fileFormat });
     }
-  };
+  }
+
+  function handleCustomizeQrCode() {
+    setShowCustomizeForm(true);
+  }
 
   return (
     <section className={styles["qr-code-container"]}>
@@ -86,8 +95,9 @@ export default function QRCode({
           ))}
         </select>
 
-        <button onClick={downloadQRCode}>Download</button>
+        <button onClick={downloadQRCode}>download</button>
       </article>
+      <button onClick={handleCustomizeQrCode}>customize</button>
     </section>
   );
 }
