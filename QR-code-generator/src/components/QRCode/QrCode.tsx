@@ -1,6 +1,9 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import QRCodeStyling, { Options } from "qr-code-styling";
 import { QRCodeType } from "../../types/QRCodeType";
+import { FileFormats } from "../../enums/FileFormats";
+import { FileFormat } from "../../types/FileFormat";
+import styles from "./QRCode.module.css";
 
 interface QRCodeProps {
   type: QRCodeType;
@@ -12,7 +15,6 @@ interface QRCodeProps {
 }
 
 // TODO: това са само част от възможностите за къстамизация на QR code. Да видя и другите
-
 export default function QRCode({
   type,
   content,
@@ -22,6 +24,10 @@ export default function QRCode({
   backgroundColor = "white",
 }: QRCodeProps) {
   const qrCodeRef = useRef<HTMLDivElement | null>(null);
+  const qrCodeInstance = useRef<QRCodeStyling | null>(null);
+  const [fileFormat, setFileFormat] = React.useState<FileFormat | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     if (!qrCodeRef.current) return;
@@ -44,13 +50,9 @@ export default function QRCode({
       },
     };
 
-    // Създаване на QR код
-    const qrCode = new QRCodeStyling(options);
+    qrCodeInstance.current = new QRCodeStyling(options);
+    qrCodeInstance.current.append(qrCodeRef.current);
 
-    // Добавяне на QR кода в DOM
-    qrCode.append(qrCodeRef.current);
-
-    // Почистване при размонтиране на компонента
     return () => {
       if (qrCodeRef.current) {
         qrCodeRef.current.innerHTML = "";
@@ -58,5 +60,34 @@ export default function QRCode({
     };
   }, [type, content, width, height, dotColor, backgroundColor]);
 
-  return <div ref={qrCodeRef}></div>;
+  const downloadQRCode = () => {
+    if (qrCodeInstance.current) {
+      qrCodeInstance.current.download({ extension: fileFormat });
+    }
+  };
+
+  return (
+    <section className={styles["qr-code-container"]}>
+      <article ref={qrCodeRef}></article>
+
+      <article className={styles["download-container"]}>
+        <select
+          id="format"
+          value={fileFormat || ""}
+          onChange={(e) => setFileFormat(e.target.value as FileFormat)}
+        >
+          <option value="" disabled>
+            Select File format
+          </option>
+          {Object.values(FileFormats).map((FileFormat) => (
+            <option key={FileFormat} value={FileFormat}>
+              {FileFormat.toUpperCase()}
+            </option>
+          ))}
+        </select>
+
+        <button onClick={downloadQRCode}>Download</button>
+      </article>
+    </section>
+  );
 }

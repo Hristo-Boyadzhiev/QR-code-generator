@@ -1,0 +1,13 @@
+.qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    padding: 2em;
+    border-left: 1px solid grey;
+}
+
+.download-container {
+    display: flex;
+    gap: 1em;
+}

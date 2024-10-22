@@ -9,14 +9,12 @@
     display: flex;
     align-items: center;
     border-radius: 0.5em;
-   border: 1px solid grey
+    border: 1px solid grey
 }
 
-.content-container, .qr-code-container {
+.content-container {
     padding: 2em;
 }
 
-.qr-code-container {
-    border-left: 1px solid grey;
-}
+
 

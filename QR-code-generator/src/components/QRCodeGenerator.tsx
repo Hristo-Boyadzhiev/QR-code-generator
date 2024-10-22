@@ -14,16 +14,14 @@ export default function QRCodeGenerator() {
           <TypeSelector />
         </section>
         {qrCodeType && qrCodeLink && (
-          <section className={styles["qr-code-container"]}>
-            <QRCode
-              type={qrCodeType}
-              content={qrCodeLink}
-              // width={300}
-              // height={300}
-              // dotColor="#4267b2"
-              // backgroundColor="#ffffff"
-            />
-          </section>
+          <QRCode
+            type={qrCodeType}
+            content={qrCodeLink}
+            // width={300}
+            // height={300}
+            // dotColor="#4267b2"
+            // backgroundColor="#ffffff"
+          />
         )}
       </article>
     </section>
