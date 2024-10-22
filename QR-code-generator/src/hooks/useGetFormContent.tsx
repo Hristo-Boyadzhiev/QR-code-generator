@@ -1,23 +1,23 @@
-import QRCodeEmailForm from "../components/QRCodeTypeForm/QRCodeEmailForm/QRCodeEmailForm";
-import QRCodePhoneNumberForm from "../components/QRCodeTypeForm/QRCodePhoneForm/QRCodePhoneNumberForm";
-import QRCodeSmsForm from "../components/QRCodeTypeForm/QRCodeSmsForm/QRCodeSmsForm";
-import QRCodeURLForm from "../components/QRCodeTypeForm/QRCodeURLForm/QRCodeURLForm";
-import QRCodeWiFiForm from "../components/QRCodeTypeForm/QRCodeWiFiForm/QrCodeWiFiForm";
+import EmailForm from "../components/TypesForms/EmailForm/EmailForm";
+import PhoneNumberForm from "../components/TypesForms/PhoneNumberForm/PhoneNumberForm";
+import SmsForm from "../components/TypesForms/SmsForm/SmsForm";
+import URLForm from "../components/TypesForms/URLForm/URLForm";
+import WiFiForm from "../components/TypesForms/WiFiForm/WiFiForm";
 import { useQRCodeGeneratorContext } from "./useQRCodeGeneratorContext";
 
 export default function useGetFormContent() {
   const { qrCodeType } = useQRCodeGeneratorContext();
   switch (qrCodeType) {
     case "SMS":
-      return <QRCodeSmsForm />;
+      return <SmsForm />;
     case "URL":
-      return <QRCodeURLForm />;
+      return <URLForm />;
     case "PhoneNumber":
-      return <QRCodePhoneNumberForm />;
+      return <PhoneNumberForm />;
     case "Email":
-      return <QRCodeEmailForm />;
+      return <EmailForm />;
     case "WiFi":
-      return <QRCodeWiFiForm />;
+      return <WiFiForm />;
     default:
       throw Error(`Unknown QR code type: ${qrCodeType}`);
   }

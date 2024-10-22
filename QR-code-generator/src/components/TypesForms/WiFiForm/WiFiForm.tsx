@@ -1,14 +1,17 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./QRCodeWiFiForm.module.css";
+import styles from "./WiFiForm.module.css";
 import { encryptionTypes } from "../../../enums/EncryptionTypes";
 
-export default function QRCodeWiFiForm() {
+export default function WiFiForm() {
   const {
     control,
     formState: { errors },
+    watch,
   } = useFormContext();
+
+  const encryptionType = watch("encryptionType");
   return (
-    <article className={styles["qr-code-wifi-form-container"]}>
+    <article className={styles["wifi-form-container"]}>
       <Controller
         name="encryptionType"
         control={control}
@@ -56,21 +59,24 @@ export default function QRCodeWiFiForm() {
             : ""}
         </p>
       )}
-      <Controller
-        name="password"
-        defaultValue=""
-        control={control}
-        render={({ field }) => (
-          <input
-            {...field}
-            type="text"
-            id="password"
-            placeholder="Enter password"
-            value={field.value}
-            onChange={field.onChange}
-          />
-        )}
-      />
+
+      {encryptionType !== encryptionTypes.None && (
+        <Controller
+          name="password"
+          defaultValue=""
+          control={control}
+          render={({ field }) => (
+            <input
+              {...field}
+              type="text"
+              id="password"
+              placeholder="Enter password"
+              value={field.value}
+              onChange={field.onChange}
+            />
+          )}
+        />
+      )}
       {errors.password && errors.password.message && (
         <p className={styles["error-message"]}>
           {typeof errors.password.message === "string"

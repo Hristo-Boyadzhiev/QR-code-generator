@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./QRCodeTypeSelector.module.css";
-import QRCodeTypeForm from "../QRCodeTypeForm/QRCodeTypeForm";
+import styles from "./TypeSelector.module.css";
 import { QRCodeType } from "../../types/QRCodeType";
 import { QRCodeTypes } from "../../enums/QRCodeTypes";
 import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
+import TypeForm from "../TypesForms/TypeForm";
 
-export default function QRCodeTypeSelector() {
+export default function TypeSelector() {
   const { qrCodeType, setQrCodeType, setQrCodeLink } =
     useQRCodeGeneratorContext();
 
@@ -32,7 +32,7 @@ export default function QRCodeTypeSelector() {
           </option>
         ))}
       </select>
-      {qrCodeType && <QRCodeTypeForm />}
+      {qrCodeType && <TypeForm />}
     </article>
   );
 }

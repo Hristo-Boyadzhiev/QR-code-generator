@@ -1,4 +1,4 @@
-.qr-code-sms-form-container {
+.sms-form-container {
   display: flex;
   flex-direction: column;
   gap: 2em;

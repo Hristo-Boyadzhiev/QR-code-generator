@@ -1,14 +1,14 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./QRCodePhoneNumberForm.module.css";
+import styles from "./SmsForm.module.css";
 import { countryCodes } from "../../../utils/countryCodes";
 
-export default function QRCodePhoneNumberForm() {
+export default function SmsForm() {
   const {
     control,
     formState: { errors },
   } = useFormContext();
   return (
-    <article className={styles["qr-code-phone-number-form-container"]}>
+    <article className={styles["sms-form-container"]}>
       <div className={styles["phone-number-container"]}>
         <div className={styles["component-with-error-container"]}>
           <Controller
@@ -68,6 +68,20 @@ export default function QRCodePhoneNumberForm() {
           )}
         </div>
       </div>
+      <Controller
+        name="message"
+        defaultValue=""
+        control={control}
+        render={({ field }) => (
+          <textarea
+            {...field}
+            id="message"
+            cols={30}
+            rows={5}
+            placeholder="Enter your message"
+          />
+        )}
+      />
     </article>
   );
 }

@@ -1,4 +1,4 @@
-import styles from "./QRCodeTypeForm.module.css";
+import styles from "./TypeForm.module.css";
 import {
   FormProvider as RHFProvider,
   SubmitHandler,
@@ -13,7 +13,7 @@ import useGetSchema from "../../hooks/useGetSchema";
 import { ObjectSchema } from "yup";
 import React from "react";
 
-export default function QRCodeTypeForm() {
+export default function TypeForm() {
   const formContent = useGetFormContent();
   const schema = useGetSchema();
   const generateLink = useGenerateLink();

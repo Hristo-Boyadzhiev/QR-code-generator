@@ -1,13 +1,7 @@
-.qr-code-wifi-form-container {
+.url-form-container {
     display: flex;
     flex-direction: column;
     gap: 1em;
-}
-
-.checkbox-container {
-  display: flex;
-  gap: 0.5em;
-  color: lightgrey;
 }
 
   .error-message {

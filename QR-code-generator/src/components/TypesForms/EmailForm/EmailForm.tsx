@@ -1,13 +1,13 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./QRCodeEmailForm.module.css";
+import styles from "./EmailForm.module.css";
 
-export default function QRCodeEmailForm() {
+export default function EmailForm() {
   const {
     control,
     formState: { errors },
   } = useFormContext();
   return (
-    <article className={styles["qr-code-email-form-container"]}>
+    <article className={styles["email-form-container"]}>
       <Controller
         name="email"
         defaultValue=""

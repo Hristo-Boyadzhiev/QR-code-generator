@@ -1,18 +1,17 @@
 import { useQRCodeGeneratorContext } from "../hooks/useQRCodeGeneratorContext";
-import QRCode from "./QRCode/QrCode";
+import QRCode from "./QRCode/QRCode";
 import styles from "./QRCodeGenerator.module.css";
-import QRCodeTypeSelector from "./QRCodeTypeSelector/QRCodeTypeSelector";
+import TypeSelector from "./TypeSelector/TypeSelector";
 
 export default function QRCodeGenerator() {
   const { qrCodeType, qrCodeLink } = useQRCodeGeneratorContext();
-  console.log(qrCodeLink);
 
   // TODO: Може да добавя бутон за customization на QR code-размер, цвят и т.н.
   return (
     <section className={styles["app-container"]}>
       <article className={styles["content-and-qr-code-container"]}>
         <section className={styles["content-container"]}>
-          <QRCodeTypeSelector />
+          <TypeSelector />
         </section>
         {qrCodeType && qrCodeLink && (
           <section className={styles["qr-code-container"]}>

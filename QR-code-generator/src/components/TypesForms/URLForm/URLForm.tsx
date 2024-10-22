@@ -1,14 +1,14 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./QRCodeURLForm.module.css";
+import styles from "./URLForm.module.css";
 
-export default function QRCodeURLForm() {
+export default function URLForm() {
   const {
     control,
     formState: { errors },
   } = useFormContext();
 
   return (
-    <article className={styles["qr-code-url-form-container"]}>
+    <article className={styles["url-form-container"]}>
       <Controller
         name="url"
         defaultValue=""
