@@ -14,4 +14,5 @@ export const emailSchema = yup.object({
 export interface EmailFormData extends yup.InferType<typeof emailSchema> {
   email: string;
   subject: string;
+  message?: string;
 }

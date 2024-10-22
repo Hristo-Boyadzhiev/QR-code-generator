@@ -21,4 +21,6 @@ export interface WiFiFormData extends yup.InferType<typeof wiFiSchema> {
   encryptionType: encryptionTypes;
   networkName: string;
   password?: string;
+  hiddenNetwork?: boolean;
+  autoconnect?: boolean;
 }

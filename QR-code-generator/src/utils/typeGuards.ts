@@ -1,3 +1,4 @@
+import { encryptionTypes } from "../enums/EncryptionTypes";
 import { EmailFormData } from "../schemas/emailSchema";
 import { PhoneNumberFormData } from "../schemas/phoneNumberSchema";
 import { SmsFormData } from "../schemas/smsSchema";
@@ -36,7 +37,12 @@ export function isEmailFormData(data: FormDataType): data is EmailFormData {
 
 export function isWiFiFormData(data: FormDataType): data is WiFiFormData {
   return (
-    typeof (data as WiFiFormData).encryptionType === "string" &&
-    typeof (data as WiFiFormData).networkName === "string"
+    Object.values(encryptionTypes).includes(
+      (data as WiFiFormData).encryptionType
+    ) &&
+    typeof (data as WiFiFormData).networkName === "string" &&
+    typeof (data as WiFiFormData).password === "string" &&
+    typeof (data as WiFiFormData).hiddenNetwork === "boolean" &&
+    typeof (data as WiFiFormData).autoconnect === "boolean"
   );
 }

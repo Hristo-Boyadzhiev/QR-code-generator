@@ -12,4 +12,5 @@ export const smsSchema = yup.object({
 export interface SmsFormData extends yup.InferType<typeof smsSchema> {
   countryCode: string;
   phoneNumber: string;
+  message?: string;
 }
