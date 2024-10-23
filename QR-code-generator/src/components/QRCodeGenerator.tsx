@@ -12,6 +12,8 @@ export default function QRCodeGenerator() {
     dotColor,
     backgroundColor,
     dotType,
+    width,
+    height,
   } = useQRCodeGeneratorContext();
 
   // TODO: Може да добавя бутон за customization на QR code-размер, цвят и т.н.
@@ -25,8 +27,8 @@ export default function QRCodeGenerator() {
           <QRCode
             type={qrCodeType}
             content={qrCodeLink}
-            // width={300}
-            // height={300}
+            width={width}
+            height={height}
             dotColor={dotColor}
             dotType={dotType}
             backgroundColor={backgroundColor}

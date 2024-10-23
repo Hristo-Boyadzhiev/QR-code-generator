@@ -15,6 +15,12 @@ interface QRCodeGeneratorContextType {
   setBackgroundColor: React.Dispatch<React.SetStateAction<string | undefined>>;
   dotType: DotType | undefined;
   setDotType: React.Dispatch<React.SetStateAction<DotType | undefined>>;
+  width: number | undefined;
+  setWidth: React.Dispatch<React.SetStateAction<number | undefined>>;
+  height: number | undefined;
+  setHeight: React.Dispatch<React.SetStateAction<number | undefined>>;
+  image: string | undefined;
+  setImage: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 export const QRCodeGeneratorContext = createContext<
@@ -33,6 +39,9 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
   const [backgroundColor, setBackgroundColor] = React.useState<
     string | undefined
   >(undefined);
+  const [width, setWidth] = React.useState<number | undefined>(undefined);
+  const [height, setHeight] = React.useState<number | undefined>(undefined);
+  const [image, setImage] = React.useState<string | undefined>(undefined);
 
   return (
     <QRCodeGeneratorContext.Provider
@@ -49,6 +58,12 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
         setBackgroundColor,
         dotType,
         setDotType,
+        width,
+        setWidth,
+        height,
+        setHeight,
+        image,
+        setImage,
       }}
     >
       {children}

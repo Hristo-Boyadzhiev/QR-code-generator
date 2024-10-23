@@ -31,7 +31,7 @@ export default function QRCode({
   const [fileFormat, setFileFormat] = React.useState<FileFormat | undefined>(
     undefined
   );
-  const { setShowCustomizeForm } = useQRCodeGeneratorContext();
+  const { setShowCustomizeForm, image } = useQRCodeGeneratorContext();
 
   // TODO: Когато добавям нови QR code customize да не забравям да ги добавям в масива на useEffect
 
@@ -53,6 +53,7 @@ export default function QRCode({
       backgroundOptions: {
         color: backgroundColor,
       },
+      image: image,
     };
 
     qrCodeInstance.current = new QRCodeStyling(options);
@@ -63,7 +64,7 @@ export default function QRCode({
         qrCodeRef.current.innerHTML = "";
       }
     };
-  }, [type, content, width, height, dotColor, dotType, backgroundColor]);
+  }, [type, content, width, height, dotColor, dotType, backgroundColor, image]);
 
   function downloadQRCode() {
     if (qrCodeInstance.current) {
