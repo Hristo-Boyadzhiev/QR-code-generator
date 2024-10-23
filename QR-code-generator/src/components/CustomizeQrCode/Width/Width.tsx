@@ -1,12 +1,13 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
+import styles from "./Width.module.css";
 
 export default function Width() {
   const { setWidth } = useQRCodeGeneratorContext();
   const { control } = useFormContext();
 
   return (
-    <div>
+    <div className={styles["width-container"]}>
       <label htmlFor="width">Width:</label>
       <Controller
         name="width"

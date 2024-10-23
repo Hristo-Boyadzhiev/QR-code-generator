@@ -1,14 +1,10 @@
 .customize-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
     color: lightgrey;
 }
 
-.customize-content-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.customize-content-container div {
-    display: flex;
-    align-items: flex-end;
-    gap: 0.5em;
+.customize-container header {
+    text-align: center;
 }

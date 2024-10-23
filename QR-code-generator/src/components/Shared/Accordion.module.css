@@ -1,0 +1,36 @@
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.accordion-container header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    align-items: center;
+    cursor: pointer;
+    background: #313439;
+    color: lightgrey;
+    border: 1px solid grey;
+    border-radius: 0.5em;
+    padding: 0.7em;
+    transition: border-color 0.3s ease;
+    letter-spacing: 0.05em;
+  }
+
+.accordion-container header:hover {
+    border: 1px solid grey;
+    border-radius: 0.5em;
+    background-color: hsl(210, 10%, 30%);
+}
+  
+  .accordion-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.7em;
+    border: 1px solid grey;
+    border-radius: 0.5em;
+  }
+  

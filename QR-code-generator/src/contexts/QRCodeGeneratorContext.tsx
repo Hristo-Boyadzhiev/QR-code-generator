@@ -1,6 +1,11 @@
 import React, { createContext, ReactNode } from "react";
 import { QRCodeType } from "../types/QRCodeType";
-import { DotType } from "qr-code-styling";
+import {
+  CornerDotType,
+  CornerSquareType,
+  DotType,
+  ErrorCorrectionLevel,
+} from "qr-code-styling";
 
 interface QRCodeGeneratorContextType {
   qrCodeType: QRCodeType | null;
@@ -21,6 +26,24 @@ interface QRCodeGeneratorContextType {
   setHeight: React.Dispatch<React.SetStateAction<number | undefined>>;
   image: string | undefined;
   setImage: React.Dispatch<React.SetStateAction<string | undefined>>;
+  cornerSquareStyle: CornerSquareType | undefined;
+  setCornerSquareStyle: React.Dispatch<
+    React.SetStateAction<CornerSquareType | undefined>
+  >;
+  cornerSquareColor: string | undefined;
+  setCornerSquareColor: React.Dispatch<
+    React.SetStateAction<string | undefined>
+  >;
+  cornerDotStyle: CornerDotType | undefined;
+  setCornerDotStyle: React.Dispatch<
+    React.SetStateAction<CornerDotType | undefined>
+  >;
+  cornerDotColor: string | undefined;
+  setCornerDotColor: React.Dispatch<React.SetStateAction<string | undefined>>;
+  currentErrorCorrectionLevel: ErrorCorrectionLevel | undefined;
+  setCurrentErrorCorrectionLevel: React.Dispatch<
+    React.SetStateAction<ErrorCorrectionLevel | undefined>
+  >;
 }
 
 export const QRCodeGeneratorContext = createContext<
@@ -42,6 +65,20 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
   const [width, setWidth] = React.useState<number | undefined>(undefined);
   const [height, setHeight] = React.useState<number | undefined>(undefined);
   const [image, setImage] = React.useState<string | undefined>(undefined);
+  const [cornerSquareStyle, setCornerSquareStyle] = React.useState<
+    CornerSquareType | undefined
+  >(undefined);
+  const [cornerSquareColor, setCornerSquareColor] = React.useState<
+    string | undefined
+  >(undefined);
+  const [cornerDotStyle, setCornerDotStyle] = React.useState<
+    CornerDotType | undefined
+  >(undefined);
+  const [cornerDotColor, setCornerDotColor] = React.useState<
+    string | undefined
+  >(undefined);
+  const [currentErrorCorrectionLevel, setCurrentErrorCorrectionLevel] =
+    React.useState<ErrorCorrectionLevel | undefined>(undefined);
 
   return (
     <QRCodeGeneratorContext.Provider
@@ -64,6 +101,16 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
         setHeight,
         image,
         setImage,
+        cornerSquareStyle,
+        setCornerSquareStyle,
+        cornerSquareColor,
+        setCornerSquareColor,
+        cornerDotStyle,
+        setCornerDotStyle,
+        cornerDotColor,
+        setCornerDotColor,
+        currentErrorCorrectionLevel,
+        setCurrentErrorCorrectionLevel,
       }}
     >
       {children}

@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import QRCodeStyling, { DotType, Options } from "qr-code-styling";
+import QRCodeStyling, {
+  CornerDotType,
+  CornerSquareType,
+  DotType,
+  ErrorCorrectionLevel,
+  Options,
+} from "qr-code-styling";
 import { QRCodeType } from "../../types/QRCodeType";
 import { FileFormats } from "../../enums/FileFormats";
 import { FileFormat } from "../../types/FileFormat";
@@ -14,9 +20,13 @@ interface QRCodeProps {
   dotColor?: string;
   dotType?: DotType;
   backgroundColor?: string;
+  cornerSquareType?: CornerSquareType;
+  cornerSquareColor?: string;
+  cornerDotType?: CornerDotType;
+  cornerDotColor?: string;
+  errorCorrectionLevel?: ErrorCorrectionLevel;
 }
 
-// TODO: това са само част от възможностите за къстамизация на QR code. Да видя и другите
 export default function QRCode({
   type,
   content,
@@ -25,6 +35,11 @@ export default function QRCode({
   dotColor = "black",
   dotType = "rounded",
   backgroundColor = "white",
+  cornerSquareType = "square",
+  cornerSquareColor = "black",
+  cornerDotType = "square",
+  cornerDotColor = "black",
+  errorCorrectionLevel = "L",
 }: QRCodeProps) {
   const qrCodeRef = useRef<HTMLDivElement | null>(null);
   const qrCodeInstance = useRef<QRCodeStyling | null>(null);
@@ -32,8 +47,6 @@ export default function QRCode({
     undefined
   );
   const { setShowCustomizeForm, image } = useQRCodeGeneratorContext();
-
-  // TODO: Когато добавям нови QR code customize да не забравям да ги добавям в масива на useEffect
 
   useEffect(() => {
     if (!qrCodeRef.current) return;
@@ -54,6 +67,17 @@ export default function QRCode({
         color: backgroundColor,
       },
       image: image,
+      cornersSquareOptions: {
+        type: cornerSquareType,
+        color: cornerSquareColor,
+      },
+      cornersDotOptions: {
+        type: cornerDotType,
+        color: cornerDotColor,
+      },
+      qrOptions: {
+        errorCorrectionLevel,
+      },
     };
 
     qrCodeInstance.current = new QRCodeStyling(options);
@@ -64,7 +88,21 @@ export default function QRCode({
         qrCodeRef.current.innerHTML = "";
       }
     };
-  }, [type, content, width, height, dotColor, dotType, backgroundColor, image]);
+  }, [
+    type,
+    content,
+    width,
+    height,
+    dotColor,
+    dotType,
+    backgroundColor,
+    image,
+    cornerSquareType,
+    cornerSquareColor,
+    cornerDotType,
+    cornerDotColor,
+    errorCorrectionLevel,
+  ]);
 
   function downloadQRCode() {
     if (qrCodeInstance.current) {
@@ -77,28 +115,30 @@ export default function QRCode({
   }
 
   return (
-    <section className={styles["qr-code-container"]}>
-      <article ref={qrCodeRef}></article>
+    <section className={styles["container"]}>
+      <section className={styles["qr-code-container"]}>
+        <article ref={qrCodeRef}></article>
 
-      <article className={styles["download-container"]}>
-        <select
-          id="format"
-          value={fileFormat || ""}
-          onChange={(e) => setFileFormat(e.target.value as FileFormat)}
-        >
-          <option value="" disabled>
-            Select File format
-          </option>
-          {Object.values(FileFormats).map((FileFormat) => (
-            <option key={FileFormat} value={FileFormat}>
-              {FileFormat.toUpperCase()}
+        <article className={styles["download-container"]}>
+          <select
+            id="format"
+            value={fileFormat || ""}
+            onChange={(e) => setFileFormat(e.target.value as FileFormat)}
+          >
+            <option value="" disabled>
+              Select File format
             </option>
-          ))}
-        </select>
+            {Object.values(FileFormats).map((FileFormat) => (
+              <option key={FileFormat} value={FileFormat}>
+                {FileFormat.toUpperCase()}
+              </option>
+            ))}
+          </select>
 
-        <button onClick={downloadQRCode}>download</button>
-      </article>
-      <button onClick={handleCustomizeQrCode}>customize</button>
+          <button onClick={downloadQRCode}>download</button>
+        </article>
+        <button onClick={handleCustomizeQrCode}>customize</button>
+      </section>
     </section>
   );
 }

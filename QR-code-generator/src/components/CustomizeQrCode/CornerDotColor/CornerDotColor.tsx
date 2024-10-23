@@ -1,25 +1,24 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
-import styles from "./DotColor.module.css";
 
-export default function DotColor() {
-  const { setDotColor } = useQRCodeGeneratorContext();
+export default function CornerDotColor() {
+  const { setCornerDotColor } = useQRCodeGeneratorContext();
   const { control } = useFormContext();
   return (
-    <div className={styles["dot-color-container"]}>
-      <label htmlFor="dotColor">dot color:</label>
+    <div>
+      <label htmlFor="CornerDotColor">corner dot color:</label>
       <Controller
-        name="dotColor"
+        name="CornerDotColor"
         control={control}
         defaultValue={"#000000"}
         render={({ field }) => (
           <input
             {...field}
             type="color"
-            id="dotColor"
+            id="CornerDotColor"
             onChange={(e) => {
               field.onChange(e.target.value);
-              setDotColor(e.target.value);
+              setCornerDotColor(e.target.value);
             }}
             value={field.value}
           />

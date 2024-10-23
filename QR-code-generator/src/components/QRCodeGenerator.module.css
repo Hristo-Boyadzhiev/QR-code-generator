@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .content-and-qr-code-container {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     border-radius: 0.5em;
-    border: 1px solid grey
+    border: 1px solid grey;
 }
 
 .content-container {

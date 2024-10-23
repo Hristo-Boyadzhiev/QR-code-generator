@@ -14,9 +14,13 @@ export default function QRCodeGenerator() {
     dotType,
     width,
     height,
+    cornerSquareStyle,
+    cornerSquareColor,
+    cornerDotStyle,
+    cornerDotColor,
+    currentErrorCorrectionLevel,
   } = useQRCodeGeneratorContext();
 
-  // TODO: Може да добавя бутон за customization на QR code-размер, цвят и т.н.
   return (
     <section className={styles["app-container"]}>
       <article className={styles["content-and-qr-code-container"]}>
@@ -32,6 +36,11 @@ export default function QRCodeGenerator() {
             dotColor={dotColor}
             dotType={dotType}
             backgroundColor={backgroundColor}
+            cornerSquareType={cornerSquareStyle}
+            cornerSquareColor={cornerSquareColor}
+            cornerDotType={cornerDotStyle}
+            cornerDotColor={cornerDotColor}
+            errorCorrectionLevel={currentErrorCorrectionLevel}
           />
         )}
       </article>
