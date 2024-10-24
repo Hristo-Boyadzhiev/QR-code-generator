@@ -1,16 +1,16 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
+import styles from "./BackgroundColor.module.css";
 
 export default function BackgroundColor() {
   const { setBackgroundColor } = useQRCodeGeneratorContext();
   const { control } = useFormContext();
   return (
-    <div>
+    <div className={styles["background-color-container"]}>
       <label htmlFor="backgroundColor">background color:</label>
       <Controller
         name="backgroundColor"
         control={control}
-        defaultValue={"#FFFFFF"}
         render={({ field }) => (
           <input
             {...field}

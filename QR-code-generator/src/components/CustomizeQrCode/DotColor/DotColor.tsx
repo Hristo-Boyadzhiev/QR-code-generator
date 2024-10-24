@@ -11,7 +11,6 @@ export default function DotColor() {
       <Controller
         name="dotColor"
         control={control}
-        defaultValue={"#000000"}
         render={({ field }) => (
           <input
             {...field}

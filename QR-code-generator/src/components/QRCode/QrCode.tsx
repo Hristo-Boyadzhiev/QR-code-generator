@@ -30,24 +30,45 @@ interface QRCodeProps {
 export default function QRCode({
   type,
   content,
-  width = 300,
-  height = 300,
-  dotColor = "black",
-  dotType = "rounded",
-  backgroundColor = "white",
-  cornerSquareType = "square",
-  cornerSquareColor = "black",
-  cornerDotType = "square",
-  cornerDotColor = "black",
-  errorCorrectionLevel = "L",
+  width,
+  height,
+  dotColor,
+  dotType,
+  backgroundColor,
+  cornerSquareType,
+  cornerSquareColor,
+  cornerDotType,
+  cornerDotColor,
+  errorCorrectionLevel,
 }: QRCodeProps) {
   const qrCodeRef = useRef<HTMLDivElement | null>(null);
   const qrCodeInstance = useRef<QRCodeStyling | null>(null);
   const [fileFormat, setFileFormat] = React.useState<FileFormat | undefined>(
     undefined
   );
-  const { setShowCustomizeForm, image, imageSize } =
-    useQRCodeGeneratorContext();
+  const [toggleForm, setToggleForm] = React.useState<"customize" | "back">(
+    "customize"
+  );
+  const {
+    setShowCustomizeForm,
+    image,
+    imageSize,
+    imageMargin,
+    setQrCodeLink,
+    setDotColor,
+    setDotType,
+    setBackgroundColor,
+    setWidth,
+    setHeight,
+    setImage,
+    setCornerSquareStyle,
+    setCornerSquareColor,
+    setCornerDotStyle,
+    setCornerDotColor,
+    setCurrentErrorCorrectionLevel,
+    setImageSize,
+    setImageMargin,
+  } = useQRCodeGeneratorContext();
 
   useEffect(() => {
     if (!qrCodeRef.current) return;
@@ -71,7 +92,7 @@ export default function QRCode({
       imageOptions: {
         crossOrigin: "anonymous",
         imageSize: imageSize,
-        // margin: 5, // Задава разстоянието (в пиксели) между изображението и QR кода
+        margin: imageMargin,
       },
       cornersSquareOptions: {
         type: cornerSquareType,
@@ -109,6 +130,7 @@ export default function QRCode({
     cornerDotColor,
     errorCorrectionLevel,
     imageSize,
+    imageMargin,
   ]);
 
   function downloadQRCode() {
@@ -118,7 +140,32 @@ export default function QRCode({
   }
 
   function handleCustomizeQrCode() {
-    setShowCustomizeForm(true);
+    switch (toggleForm) {
+      case "customize":
+        setToggleForm("back");
+        setShowCustomizeForm(true);
+        break;
+      case "back":
+        setToggleForm("customize");
+        setShowCustomizeForm(false);
+        setQrCodeLink(null);
+        setDotColor("#000000");
+        setDotType("rounded");
+        setBackgroundColor("#FFFFFF");
+        setWidth(300);
+        setHeight(300);
+        setImage(undefined);
+        setCornerSquareStyle("square");
+        setCornerSquareColor("#000000");
+        setCornerDotStyle("square");
+        setCornerDotColor("#000000");
+        setCurrentErrorCorrectionLevel("L");
+        setImageSize(1);
+        setImageMargin(0);
+        break;
+      default:
+        throw Error("da");
+    }
   }
 
   return (
@@ -144,7 +191,7 @@ export default function QRCode({
 
           <button onClick={downloadQRCode}>download</button>
         </article>
-        <button onClick={handleCustomizeQrCode}>customize</button>
+        <button onClick={handleCustomizeQrCode}>{toggleForm}</button>
       </section>
     </section>
   );

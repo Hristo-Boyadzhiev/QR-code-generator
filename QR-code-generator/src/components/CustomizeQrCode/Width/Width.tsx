@@ -11,12 +11,12 @@ export default function Width() {
       <label htmlFor="width">Width:</label>
       <Controller
         name="width"
-        defaultValue="300"
         control={control}
         render={({ field }) => (
           <input
             {...field}
             type="number"
+            min={0}
             id="width"
             value={field.value}
             onChange={(e) => {

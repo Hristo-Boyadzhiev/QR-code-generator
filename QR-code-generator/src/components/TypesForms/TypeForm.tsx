@@ -17,26 +17,46 @@ export default function TypeForm() {
   const formContent = useGetFormContent();
   const schema = useGetSchema();
   const generateLink = useGenerateLink();
-  const { setQrCodeLink, qrCodeType } = useQRCodeGeneratorContext();
+  const { setQrCodeLink, qrCodeType, formData, setFormData } =
+    useQRCodeGeneratorContext();
 
   const methods = useForm<FormDataType>({
     resolver: schema
       ? yupResolver(schema as ObjectSchema<FormDataType>)
       : undefined,
     // mode: "onChange", //validation on change
+    defaultValues: {
+      email: "",
+      subject: "",
+      message: "",
+      countryCode: "",
+      phoneNumber: "",
+      url: "",
+      encryptionType: undefined,
+      networkName: "",
+      password: "",
+      hiddenNetwork: false,
+      autoconnect: false,
+    },
   });
 
   React.useEffect(() => {
-    methods.reset();
-  }, [qrCodeType]);
+    if (formData) {
+      methods.reset(formData);
+    } else {
+      methods.reset();
+    }
+  }, [formData, qrCodeType]);
 
   const handleFormSubmit: SubmitHandler<FormDataType> = (data) => {
     generateLink(data);
+    setFormData(data);
   };
 
   const handleReset = () => {
     methods.reset();
     setQrCodeLink(null);
+    setFormData(null);
   };
 
   //RHFProvider - Global context for react-hook-form methods

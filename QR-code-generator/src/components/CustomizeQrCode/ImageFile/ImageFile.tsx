@@ -1,5 +1,6 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
+import styles from "./ImageFile.module.css";
 
 export default function ImageFile() {
   const { setImage } = useQRCodeGeneratorContext();
@@ -32,21 +33,20 @@ export default function ImageFile() {
   };
 
   const handleRemoveImage = (onChange: any) => {
-    setImage(undefined); // Или `null`, ако предпочитате
+    setImage(undefined);
     onChange(null);
   };
 
   return (
-    <div>
+    <div className={styles["image-file-container"]}>
       <Controller
-        name="image-file"
+        name="imageFile"
         control={control}
-        defaultValue={null}
         render={({ field }) => (
           <>
             <input
               type="file"
-              id="image-file"
+              id="imageFile"
               accept="image/*"
               onChange={(e) => handleFileChange(e, field.onChange)}
             />

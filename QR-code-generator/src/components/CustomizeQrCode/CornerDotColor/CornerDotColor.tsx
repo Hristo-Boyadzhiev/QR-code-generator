@@ -6,16 +6,15 @@ export default function CornerDotColor() {
   const { control } = useFormContext();
   return (
     <div>
-      <label htmlFor="CornerDotColor">corner dot color:</label>
+      <label htmlFor="cornerDotColor">corner dot color:</label>
       <Controller
-        name="CornerDotColor"
+        name="cornerDotColor"
         control={control}
-        defaultValue={"#000000"}
         render={({ field }) => (
           <input
             {...field}
             type="color"
-            id="CornerDotColor"
+            id="cornerDotColor"
             onChange={(e) => {
               field.onChange(e.target.value);
               setCornerDotColor(e.target.value);

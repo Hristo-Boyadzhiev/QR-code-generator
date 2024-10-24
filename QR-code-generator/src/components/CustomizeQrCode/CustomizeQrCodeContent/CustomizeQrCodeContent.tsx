@@ -9,6 +9,7 @@ import DotsType from "../DotsType/DotsType";
 import ErrorCorLevel from "../ErrorCorLevel/ErrorCorLevel";
 import Height from "../Height/Height";
 import ImageFile from "../ImageFile/ImageFile";
+import ImageMargin from "../ImageMargin/ImageMargin";
 import ImageSize from "../ImageSize/ImageSize";
 import Width from "../Width/Width";
 import styles from "./CustomizeQrCodeContent.module.css";
@@ -23,6 +24,7 @@ export default function CustomizeQrCodeContent() {
       <Accordion title="Image">
         <ImageFile />
         <ImageSize />
+        <ImageMargin />
       </Accordion>
       <Accordion title="dot options">
         <DotsType />

@@ -3,3 +3,10 @@
     align-items: flex-end;
     gap: 0.5em;
   }
+
+  .error-message {
+    color: red;
+    /* max-width: 200px; */
+    white-space: normal; 
+    overflow-wrap: break-word;
+  }

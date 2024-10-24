@@ -10,7 +10,6 @@ export default function EmailForm() {
     <article className={styles["email-form-container"]}>
       <Controller
         name="email"
-        defaultValue=""
         control={control}
         render={({ field }) => (
           <input
@@ -31,7 +30,6 @@ export default function EmailForm() {
       )}
       <Controller
         name="subject"
-        defaultValue=""
         control={control}
         render={({ field }) => (
           <input
@@ -54,7 +52,6 @@ export default function EmailForm() {
       )}
       <Controller
         name="message"
-        defaultValue=""
         control={control}
         render={({ field }) => (
           <textarea

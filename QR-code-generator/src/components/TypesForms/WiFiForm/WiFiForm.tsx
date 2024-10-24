@@ -15,7 +15,6 @@ export default function WiFiForm() {
       <Controller
         name="encryptionType"
         control={control}
-        defaultValue=""
         render={({ field }) => (
           <select {...field} required>
             <option value="" disabled>
@@ -38,7 +37,6 @@ export default function WiFiForm() {
       )}
       <Controller
         name="networkName"
-        defaultValue=""
         control={control}
         render={({ field }) => (
           <input
@@ -63,7 +61,6 @@ export default function WiFiForm() {
       {encryptionType !== encryptionTypes.None && (
         <Controller
           name="password"
-          defaultValue=""
           control={control}
           render={({ field }) => (
             <input
@@ -87,7 +84,6 @@ export default function WiFiForm() {
       <Controller
         name="hiddenNetwork"
         control={control}
-        defaultValue={false}
         render={({ field }) => (
           <div className={styles["checkbox-container"]}>
             <input
@@ -105,7 +101,6 @@ export default function WiFiForm() {
       <Controller
         name="autoconnect"
         control={control}
-        defaultValue={false}
         render={({ field }) => (
           <div className={styles["checkbox-container"]}>
             <input

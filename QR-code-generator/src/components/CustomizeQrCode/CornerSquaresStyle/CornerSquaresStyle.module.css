@@ -1,0 +1,5 @@
+.corner-square-style-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5em;
+}

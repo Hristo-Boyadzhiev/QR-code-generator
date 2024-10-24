@@ -4,32 +4,43 @@ import styles from "./ImageSize.module.css";
 
 export default function ImageSize() {
   const { setImageSize } = useQRCodeGeneratorContext();
-  const { control } = useFormContext();
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext();
 
   return (
     <div className={styles["image-size-container"]}>
-      <label htmlFor="image-size">image size:</label>
+      <label htmlFor="imageSize">image size:</label>
       <Controller
-        name="image-size"
-        defaultValue="1"
+        name="imageSize"
         control={control}
         render={({ field }) => (
           <input
             {...field}
             type="number"
-            id="image-size"
+            id="imageSize"
             min={0}
             max={1}
             step={0.1}
             value={field.value}
             onChange={(e) => {
-              const newImageSizeValue = Number(e.target.value);
-              field.onChange(newImageSizeValue);
-              setImageSize(newImageSizeValue);
+              const newImageSizeValue = parseFloat(e.target.value);
+              if (newImageSizeValue >= 0 && newImageSizeValue <= 1) {
+                field.onChange(newImageSizeValue);
+                setImageSize(newImageSizeValue);
+              }
             }}
           />
         )}
       />
+      {errors.imageSize && errors.imageSize.message && (
+        <p className={styles["error-message"]}>
+          {typeof errors.imageSize.message === "string"
+            ? errors.imageSize.message
+            : ""}
+        </p>
+      )}
     </div>
   );
 }
