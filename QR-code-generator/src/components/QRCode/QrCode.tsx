@@ -46,7 +46,8 @@ export default function QRCode({
   const [fileFormat, setFileFormat] = React.useState<FileFormat | undefined>(
     undefined
   );
-  const { setShowCustomizeForm, image } = useQRCodeGeneratorContext();
+  const { setShowCustomizeForm, image, imageSize } =
+    useQRCodeGeneratorContext();
 
   useEffect(() => {
     if (!qrCodeRef.current) return;
@@ -67,6 +68,11 @@ export default function QRCode({
         color: backgroundColor,
       },
       image: image,
+      imageOptions: {
+        crossOrigin: "anonymous",
+        imageSize: imageSize,
+        // margin: 5, // Задава разстоянието (в пиксели) между изображението и QR кода
+      },
       cornersSquareOptions: {
         type: cornerSquareType,
         color: cornerSquareColor,
@@ -102,6 +108,7 @@ export default function QRCode({
     cornerDotType,
     cornerDotColor,
     errorCorrectionLevel,
+    imageSize,
   ]);
 
   function downloadQRCode() {

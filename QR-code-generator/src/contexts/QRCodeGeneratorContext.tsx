@@ -44,6 +44,8 @@ interface QRCodeGeneratorContextType {
   setCurrentErrorCorrectionLevel: React.Dispatch<
     React.SetStateAction<ErrorCorrectionLevel | undefined>
   >;
+  imageSize: number | undefined;
+  setImageSize: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
 export const QRCodeGeneratorContext = createContext<
@@ -79,6 +81,9 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
   >(undefined);
   const [currentErrorCorrectionLevel, setCurrentErrorCorrectionLevel] =
     React.useState<ErrorCorrectionLevel | undefined>(undefined);
+  const [imageSize, setImageSize] = React.useState<number | undefined>(
+    undefined
+  );
 
   return (
     <QRCodeGeneratorContext.Provider
@@ -111,6 +116,8 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
         setCornerDotColor,
         currentErrorCorrectionLevel,
         setCurrentErrorCorrectionLevel,
+        imageSize,
+        setImageSize,
       }}
     >
       {children}
