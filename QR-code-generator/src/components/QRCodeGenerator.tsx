@@ -21,6 +21,7 @@ export default function QRCodeGenerator() {
     currentErrorCorrectionLevel,
   } = useQRCodeGeneratorContext();
 
+  // TODO: При responsive design  class content-and-qr-code-container -> flex-direction: column;
   return (
     <section className={styles["app-container"]}>
       <article className={styles["content-and-qr-code-container"]}>

@@ -12,6 +12,7 @@ import { FormDataType } from "../../types/FormDataType";
 import useGetSchema from "../../hooks/useGetSchema";
 import { ObjectSchema } from "yup";
 import React from "react";
+import { getDefaultValues } from "../../utils/getDefaultValues";
 
 export default function TypeForm() {
   const formContent = useGetFormContent();
@@ -19,32 +20,34 @@ export default function TypeForm() {
   const generateLink = useGenerateLink();
   const { setQrCodeLink, qrCodeType, formData, setFormData } =
     useQRCodeGeneratorContext();
+  const defaultValues = getDefaultValues(qrCodeType);
 
   const methods = useForm<FormDataType>({
     resolver: schema
       ? yupResolver(schema as ObjectSchema<FormDataType>)
       : undefined,
     // mode: "onChange", //validation on change
-    defaultValues: {
-      email: "",
-      subject: "",
-      message: "",
-      countryCode: "",
-      phoneNumber: "",
-      url: "",
-      encryptionType: undefined,
-      networkName: "",
-      password: "",
-      hiddenNetwork: false,
-      autoconnect: false,
-    },
+    defaultValues: defaultValues,
+    // defaultValues: {
+    //   email: "",
+    //   subject: "",
+    //   message: "",
+    //   countryCode: "",
+    //   phoneNumber: "",
+    //   url: "",
+    //   encryptionType: undefined,
+    //   networkName: "",
+    //   password: "",
+    //   hiddenNetwork: false,
+    //   autoconnect: false,
+    // },
   });
 
   React.useEffect(() => {
     if (formData) {
       methods.reset(formData);
     } else {
-      methods.reset();
+      methods.reset(defaultValues);
     }
   }, [formData, qrCodeType]);
 
@@ -54,9 +57,11 @@ export default function TypeForm() {
   };
 
   const handleReset = () => {
-    methods.reset();
-    setQrCodeLink(null);
-    setFormData(null);
+    if (qrCodeType) {
+      methods.reset(defaultValues);
+      setQrCodeLink(null);
+      setFormData(null);
+    }
   };
 
   //RHFProvider - Global context for react-hook-form methods
