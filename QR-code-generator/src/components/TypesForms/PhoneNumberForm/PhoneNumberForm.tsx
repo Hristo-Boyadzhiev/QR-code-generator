@@ -13,6 +13,7 @@ export default function PhoneNumberForm() {
         <div className={styles["component-with-error-container"]}>
           <Controller
             name="countryCode"
+            // defaultValue={""}
             control={control}
             render={({ field }) => (
               <select {...field} required>
@@ -39,6 +40,7 @@ export default function PhoneNumberForm() {
         <div className={styles["component-with-error-container"]}>
           <Controller
             name="phoneNumber"
+            // defaultValue={""}
             control={control}
             render={({ field }) => (
               <input

@@ -28,7 +28,7 @@ export function getDefaultValues(
       };
     case "WiFi":
       return {
-        encryptionType: undefined,
+        encryptionType: "",
         networkName: "",
         password: "",
         hiddenNetwork: false,

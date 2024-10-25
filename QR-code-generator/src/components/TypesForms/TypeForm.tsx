@@ -20,14 +20,13 @@ export default function TypeForm() {
   const generateLink = useGenerateLink();
   const { setQrCodeLink, qrCodeType, formData, setFormData } =
     useQRCodeGeneratorContext();
-  const defaultValues = getDefaultValues(qrCodeType);
 
   const methods = useForm<FormDataType>({
     resolver: schema
       ? yupResolver(schema as ObjectSchema<FormDataType>)
       : undefined,
     // mode: "onChange", //validation on change
-    defaultValues: defaultValues,
+    defaultValues: getDefaultValues(qrCodeType),
     // defaultValues: {
     //   email: "",
     //   subject: "",
@@ -47,7 +46,9 @@ export default function TypeForm() {
     if (formData) {
       methods.reset(formData);
     } else {
-      methods.reset(defaultValues);
+      if (qrCodeType) {
+        methods.reset(getDefaultValues(qrCodeType));
+      }
     }
   }, [formData, qrCodeType]);
 
@@ -58,7 +59,7 @@ export default function TypeForm() {
 
   const handleReset = () => {
     if (qrCodeType) {
-      methods.reset(defaultValues);
+      methods.reset(getDefaultValues(qrCodeType));
       setQrCodeLink(null);
       setFormData(null);
     }
