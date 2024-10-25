@@ -1,4 +1,5 @@
 import { EmailFormData } from "../schemas/emailSchema";
+import { LocationFormData } from "../schemas/locationSchema";
 import { PhoneNumberFormData } from "../schemas/phoneNumberSchema";
 import { SmsFormData } from "../schemas/smsSchema";
 import { UrlFormData } from "../schemas/urlSchema";
@@ -9,4 +10,5 @@ export type FormDataType =
   | UrlFormData
   | PhoneNumberFormData
   | EmailFormData
-  | WiFiFormData;
+  | WiFiFormData
+  | LocationFormData;

@@ -1,4 +1,5 @@
 import EmailForm from "../components/TypesForms/EmailForm/EmailForm";
+import LocationForm from "../components/TypesForms/LocationForm/LocationForm";
 import PhoneNumberForm from "../components/TypesForms/PhoneNumberForm/PhoneNumberForm";
 import SmsForm from "../components/TypesForms/SmsForm/SmsForm";
 import URLForm from "../components/TypesForms/URLForm/URLForm";
@@ -18,6 +19,8 @@ export default function useGetFormContent() {
       return <EmailForm />;
     case "WiFi":
       return <WiFiForm />;
+    case "Location":
+      return <LocationForm />;
     default:
       throw Error(`Unknown QR code type: ${qrCodeType}`);
   }

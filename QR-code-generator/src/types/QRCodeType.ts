@@ -1,1 +1,7 @@
-export type QRCodeType = "SMS" | "URL" | "PhoneNumber" | "Email" | "WiFi";
+export type QRCodeType =
+  | "SMS"
+  | "URL"
+  | "PhoneNumber"
+  | "Email"
+  | "WiFi"
+  | "Location";

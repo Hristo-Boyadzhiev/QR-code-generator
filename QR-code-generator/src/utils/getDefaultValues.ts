@@ -34,6 +34,11 @@ export function getDefaultValues(
         hiddenNetwork: false,
         autoconnect: false,
       };
+    case "Location":
+      return {
+        latitude: "",
+        longitude: "",
+      };
     default:
       throw new Error(`Unknown QR code type: ${qrCodeType}`);
   }
