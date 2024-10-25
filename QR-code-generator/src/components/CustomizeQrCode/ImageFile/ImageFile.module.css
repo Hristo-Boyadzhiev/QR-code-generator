@@ -1,4 +1,9 @@
 .image-file-container {
     display: flex;
+    flex-direction: column;
     gap: 1em;
+}
+
+.image-file-container input {
+    width: 100%;
 }

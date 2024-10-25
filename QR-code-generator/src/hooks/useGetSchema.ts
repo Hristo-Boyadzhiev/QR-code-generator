@@ -1,9 +1,9 @@
-import { useQRCodeGeneratorContext } from "../hooks/useQRCodeGeneratorContext";
 import { emailSchema } from "../schemas/emailSchema";
 import { phoneNumberSchema } from "../schemas/phoneNumberSchema";
 import { smsSchema } from "../schemas/smsSchema";
 import { urlSchema } from "../schemas/urlSchema";
 import { wiFiSchema } from "../schemas/wiFiSchema";
+import { useQRCodeGeneratorContext } from "./useQRCodeGeneratorContext";
 
 export default function useGetSchema() {
   const { qrCodeType } = useQRCodeGeneratorContext();

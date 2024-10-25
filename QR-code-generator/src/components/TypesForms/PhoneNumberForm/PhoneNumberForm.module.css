@@ -23,3 +23,10 @@
     white-space: normal; 
     overflow-wrap: break-word;
   }
+
+  @media (max-width: 600px) {
+    .phone-number-container {
+      flex-direction: column;
+      align-items: stretch
+    }
+  }

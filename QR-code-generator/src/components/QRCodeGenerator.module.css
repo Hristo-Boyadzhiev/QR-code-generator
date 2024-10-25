@@ -7,7 +7,6 @@
 
 .content-and-qr-code-container {
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     border-radius: 0.5em;
     border: 1px solid grey;
@@ -17,5 +16,16 @@
     padding: 2em;
 }
 
+@media (max-width: 850px) {
+    .content-and-qr-code-container {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .content-and-qr-code-container {
+      border: none
+    }
+  }
 
 

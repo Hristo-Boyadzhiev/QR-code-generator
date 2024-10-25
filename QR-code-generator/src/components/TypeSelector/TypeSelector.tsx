@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./TypeSelector.module.css";
 import { QRCodeType } from "../../types/QRCodeType";
 import { QRCodeTypes } from "../../enums/QRCodeTypes";
-import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
 import TypeForm from "../TypesForms/TypeForm";
+import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
 
 export default function TypeSelector() {
   const { qrCodeType, setQrCodeType, setQrCodeLink } =

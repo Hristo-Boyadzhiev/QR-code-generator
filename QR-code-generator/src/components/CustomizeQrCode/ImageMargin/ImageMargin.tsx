@@ -1,6 +1,6 @@
 import { Controller, useFormContext } from "react-hook-form";
-import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 import styles from "./ImageMargin.module.css";
+import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function ImageMargin() {
   const { setImageMargin } = useQRCodeGeneratorContext();

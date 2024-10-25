@@ -1,8 +1,9 @@
 import { Controller, useFormContext } from "react-hook-form";
-import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
+
 import { CornerSquareType } from "qr-code-styling";
 import { CornerSquareTypes } from "../../../enums/CornerSquareTypes";
 import styles from "./CornerSquaresStyle.module.css";
+import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function CornerSquareStyle() {
   const { setCornerSquareStyle } = useQRCodeGeneratorContext();

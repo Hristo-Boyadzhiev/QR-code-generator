@@ -1,8 +1,8 @@
 import { Controller, useFormContext } from "react-hook-form";
-import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 import { DotTypes } from "../../../enums/DotTypes";
 import { DotType } from "qr-code-styling";
 import styles from "./DotsType.module.css";
+import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function DotsType() {
   const { setDotType } = useQRCodeGeneratorContext();

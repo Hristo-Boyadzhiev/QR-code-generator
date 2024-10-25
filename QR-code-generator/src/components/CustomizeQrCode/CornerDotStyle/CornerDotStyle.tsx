@@ -1,8 +1,8 @@
 import { Controller, useFormContext } from "react-hook-form";
-import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 import { CornerDotType } from "qr-code-styling";
 import { CornerDotTypes } from "../../../enums/CornerDotTypes";
 import styles from "./CornerDotStyle.module.css";
+import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function CornerDotStyle() {
   const { setCornerDotStyle } = useQRCodeGeneratorContext();

@@ -1,13 +1,10 @@
 import { Controller, useFormContext } from "react-hook-form";
-import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 import styles from "./ImageSize.module.css";
+import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function ImageSize() {
   const { setImageSize } = useQRCodeGeneratorContext();
-  const {
-    control,
-    formState: { errors },
-  } = useFormContext();
+  const { control } = useFormContext();
 
   return (
     <div className={styles["image-size-container"]}>
@@ -34,13 +31,6 @@ export default function ImageSize() {
           />
         )}
       />
-      {errors.imageSize && errors.imageSize.message && (
-        <p className={styles["error-message"]}>
-          {typeof errors.imageSize.message === "string"
-            ? errors.imageSize.message
-            : ""}
-        </p>
-      )}
     </div>
   );
 }

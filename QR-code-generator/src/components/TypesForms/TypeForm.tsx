@@ -7,12 +7,12 @@ import {
 import { yupResolver } from "@hookform/resolvers/yup";
 import useGetFormContent from "../../hooks/useGetFormContent";
 import useGenerateLink from "../../hooks/useGenerateLink";
-import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
 import { FormDataType } from "../../types/FormDataType";
 import useGetSchema from "../../hooks/useGetSchema";
 import { ObjectSchema } from "yup";
 import React from "react";
 import { getDefaultValues } from "../../utils/getDefaultValues";
+import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
 
 export default function TypeForm() {
   const formContent = useGetFormContent();
