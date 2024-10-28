@@ -1,13 +1,12 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./CornerSquareColor.module.css";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function CornerSquareColor() {
   const { setCornerSquareColor } = useQRCodeGeneratorContext();
   const { control } = useFormContext();
   return (
-    <div className={styles["corner-square-color-container"]}>
-      <label htmlFor="cornerSquareColor">corner square color:</label>
+    <article>
+      <label htmlFor="cornerSquareColor">color:</label>
       <Controller
         name="cornerSquareColor"
         control={control}
@@ -24,6 +23,6 @@ export default function CornerSquareColor() {
           />
         )}
       />
-    </div>
+    </article>
   );
 }

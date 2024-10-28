@@ -26,13 +26,15 @@ export default function TypeForm() {
       ? yupResolver(schema as ObjectSchema<FormDataType>)
       : undefined,
     // mode: "onChange", //validation on change
-    defaultValues: getDefaultValues(qrCodeType),
+    defaultValues: qrCodeType ? getDefaultValues(qrCodeType) : undefined,
     // defaultValues: {
     //   email: "",
     //   subject: "",
     //   message: "",
-    //   countryCode: "",
-    //   phoneNumber: "",
+    //   countryCodeSmsForm: "",
+    //   phoneNumberSmsForm: "",
+    //   countryCodePhoneNumberForm: "",
+    //   phoneNumberPhoneNumberForm: "",
     //   url: "",
     //   encryptionType: undefined,
     //   networkName: "",

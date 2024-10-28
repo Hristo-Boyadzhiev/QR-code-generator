@@ -18,13 +18,13 @@ export default function useGenerateLink() {
       case "URL":
         generateUrlLink(data, setQrCodeLink);
         break;
-      case "PhoneNumber":
+      case "Phone Number":
         generatePhoneNumberLink(data, setQrCodeLink);
         break;
-      case "Email":
+      case "E-mail":
         generateEmailLink(data, setQrCodeLink);
         break;
-      case "WiFi":
+      case "Wi-Fi":
         generateWiFiLink(data, setQrCodeLink);
         break;
       case "Location":

@@ -18,11 +18,7 @@ export default function TypeSelector() {
 
   return (
     <article className={styles["qr-code-type-selector-container"]}>
-      <select
-        name="qrCodeType"
-        value={qrCodeType || ""}
-        onChange={handleQRCodeType}
-      >
+      <select name="qrCodeType" value={qrCodeType} onChange={handleQRCodeType}>
         <option value="" disabled>
           Select QR code type
         </option>

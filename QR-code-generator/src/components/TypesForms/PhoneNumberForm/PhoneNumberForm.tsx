@@ -12,8 +12,7 @@ export default function PhoneNumberForm() {
       <div className={styles["phone-number-container"]}>
         <div className={styles["component-with-error-container"]}>
           <Controller
-            name="countryCode"
-            // defaultValue={""}
+            name="countryCodePhoneNumberForm"
             control={control}
             render={({ field }) => (
               <select {...field} required>
@@ -28,25 +27,25 @@ export default function PhoneNumberForm() {
               </select>
             )}
           />
-          {errors.countryCode && errors.countryCode.message && (
-            <p className={styles["error-message"]}>
-              {typeof errors.countryCode.message === "string"
-                ? errors.countryCode.message
-                : ""}
-            </p>
-          )}
+          {errors.countryCodePhoneNumberForm &&
+            errors.countryCodePhoneNumberForm.message && (
+              <p className={styles["error-message"]}>
+                {typeof errors.countryCodePhoneNumberForm.message === "string"
+                  ? errors.countryCodePhoneNumberForm.message
+                  : ""}
+              </p>
+            )}
         </div>
 
         <div className={styles["component-with-error-container"]}>
           <Controller
-            name="phoneNumber"
-            // defaultValue={""}
+            name="phoneNumberPhoneNumberForm"
             control={control}
             render={({ field }) => (
               <input
                 {...field}
                 type="text"
-                id="phoneNumber"
+                id="phoneNumberPhoneNumberForm"
                 placeholder="Enter phone number *"
                 required
                 onChange={(e) => {
@@ -59,13 +58,14 @@ export default function PhoneNumberForm() {
               />
             )}
           />
-          {errors.phoneNumber && errors.phoneNumber.message && (
-            <p className={styles["error-message"]}>
-              {typeof errors.phoneNumber.message === "string"
-                ? errors.phoneNumber.message
-                : ""}
-            </p>
-          )}
+          {errors.phoneNumberPhoneNumberForm &&
+            errors.phoneNumberPhoneNumberForm.message && (
+              <p className={styles["error-message"]}>
+                {typeof errors.phoneNumberPhoneNumberForm.message === "string"
+                  ? errors.phoneNumberPhoneNumberForm.message
+                  : ""}
+              </p>
+            )}
         </div>
       </div>
     </article>

@@ -13,11 +13,11 @@ export default function useGetFormContent() {
       return <SmsForm />;
     case "URL":
       return <URLForm />;
-    case "PhoneNumber":
+    case "Phone Number":
       return <PhoneNumberForm />;
-    case "Email":
+    case "E-mail":
       return <EmailForm />;
-    case "WiFi":
+    case "Wi-Fi":
       return <WiFiForm />;
     case "Location":
       return <LocationForm />;

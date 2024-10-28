@@ -1,5 +1,4 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./ImageMargin.module.css";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function ImageMargin() {
@@ -7,8 +6,8 @@ export default function ImageMargin() {
   const { control } = useFormContext();
 
   return (
-    <div className={styles["image-margin-container"]}>
-      <label htmlFor="imageMargin">image margin:</label>
+    <article>
+      <label htmlFor="imageMargin">margin:</label>
       <Controller
         name="imageMargin"
         control={control}
@@ -27,6 +26,6 @@ export default function ImageMargin() {
           />
         )}
       />
-    </div>
+    </article>
   );
 }

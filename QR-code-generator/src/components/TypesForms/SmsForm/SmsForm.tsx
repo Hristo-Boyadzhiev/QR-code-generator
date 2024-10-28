@@ -12,8 +12,7 @@ export default function SmsForm() {
       <div className={styles["phone-number-container"]}>
         <div className={styles["component-with-error-container"]}>
           <Controller
-            name="countryCode"
-            // defaultValue={""}
+            name="countryCodeSmsForm"
             control={control}
             render={({ field }) => (
               <select {...field} required>
@@ -28,10 +27,10 @@ export default function SmsForm() {
               </select>
             )}
           />
-          {errors.countryCode && errors.countryCode.message && (
+          {errors.countryCodeSmsForm && errors.countryCodeSmsForm.message && (
             <p className={styles["error-message"]}>
-              {typeof errors.countryCode.message === "string"
-                ? errors.countryCode.message
+              {typeof errors.countryCodeSmsForm.message === "string"
+                ? errors.countryCodeSmsForm.message
                 : ""}
             </p>
           )}
@@ -39,14 +38,13 @@ export default function SmsForm() {
 
         <div className={styles["component-with-error-container"]}>
           <Controller
-            name="phoneNumber"
-            // defaultValue={""}
+            name="phoneNumberSmsForm"
             control={control}
             render={({ field }) => (
               <input
                 {...field}
                 type="text"
-                id="phoneNumber"
+                id="phoneNumberSmsForm"
                 placeholder="Enter phone number *"
                 required
                 onChange={(e) => {
@@ -59,10 +57,10 @@ export default function SmsForm() {
               />
             )}
           />
-          {errors.phoneNumber && errors.phoneNumber.message && (
+          {errors.phoneNumberSmsForm && errors.phoneNumberSmsForm.message && (
             <p className={styles["error-message"]}>
-              {typeof errors.phoneNumber.message === "string"
-                ? errors.phoneNumber.message
+              {typeof errors.phoneNumberSmsForm.message === "string"
+                ? errors.phoneNumberSmsForm.message
                 : ""}
             </p>
           )}
@@ -70,7 +68,6 @@ export default function SmsForm() {
       </div>
       <Controller
         name="message"
-        // defaultValue={""}
         control={control}
         render={({ field }) => (
           <textarea

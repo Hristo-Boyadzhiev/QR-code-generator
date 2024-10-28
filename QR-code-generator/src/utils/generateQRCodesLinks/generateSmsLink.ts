@@ -13,6 +13,6 @@ export default function generateSmsLink(
     ? `&body=${encodeURIComponent(data.message)}`
     : "";
 
-  const generatedSmsLink = `sms:${data.countryCode}${data.phoneNumber}${messagePart}`;
+  const generatedSmsLink = `sms:${data.countryCodeSmsForm}${data.phoneNumberSmsForm}${messagePart}`;
   setQrCodeLink(generatedSmsLink);
 }

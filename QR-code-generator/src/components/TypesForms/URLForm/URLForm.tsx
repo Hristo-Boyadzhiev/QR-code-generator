@@ -11,7 +11,6 @@ export default function URLForm() {
     <article className={styles["url-form-container"]}>
       <Controller
         name="url"
-        // defaultValue={""}
         control={control}
         render={({ field }) => (
           <input

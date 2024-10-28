@@ -5,7 +5,7 @@ export function getDefaultValues(
   qrCodeType: QRCodeType
 ): Partial<FormDataType> {
   switch (qrCodeType) {
-    case "Email":
+    case "E-mail":
       return {
         email: "",
         subject: "",
@@ -13,20 +13,20 @@ export function getDefaultValues(
       };
     case "SMS":
       return {
-        countryCode: "",
-        phoneNumber: "",
+        countryCodeSmsForm: "",
+        phoneNumberSmsForm: "",
         message: "",
       };
-    case "PhoneNumber":
+    case "Phone Number":
       return {
-        countryCode: "",
-        phoneNumber: "",
+        countryCodePhoneNumberForm: "",
+        phoneNumberPhoneNumberForm: "",
       };
     case "URL":
       return {
         url: "",
       };
-    case "WiFi":
+    case "Wi-Fi":
       return {
         encryptionType: "",
         networkName: "",

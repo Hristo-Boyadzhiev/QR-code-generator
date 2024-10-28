@@ -9,8 +9,8 @@ import {
 import { FormDataType } from "../types/FormDataType";
 
 interface QRCodeGeneratorContextType {
-  qrCodeType: QRCodeType | null;
-  setQrCodeType: React.Dispatch<React.SetStateAction<QRCodeType | null>>;
+  qrCodeType: QRCodeType | "";
+  setQrCodeType: React.Dispatch<React.SetStateAction<QRCodeType | "">>;
   qrCodeLink: string | null;
   setQrCodeLink: React.Dispatch<React.SetStateAction<string | null>>;
   showCustomizeForm: boolean;
@@ -27,6 +27,8 @@ interface QRCodeGeneratorContextType {
   setHeight: React.Dispatch<React.SetStateAction<number>>;
   image: string | undefined;
   setImage: React.Dispatch<React.SetStateAction<string | undefined>>;
+  imageKey: number;
+  setImageKey: React.Dispatch<React.SetStateAction<number>>;
   cornerSquareStyle: CornerSquareType;
   setCornerSquareStyle: React.Dispatch<React.SetStateAction<CornerSquareType>>;
   cornerSquareColor: string;
@@ -54,7 +56,7 @@ export const QRCodeGeneratorContext = createContext<
 export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [qrCodeType, setQrCodeType] = React.useState<QRCodeType | null>(null);
+  const [qrCodeType, setQrCodeType] = React.useState<QRCodeType | "">("");
   const [qrCodeLink, setQrCodeLink] = React.useState<string | null>(null);
   const [showCustomizeForm, setShowCustomizeForm] =
     React.useState<boolean>(false);
@@ -65,6 +67,7 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
   const [width, setWidth] = React.useState<number>(300);
   const [height, setHeight] = React.useState<number>(300);
   const [image, setImage] = React.useState<string | undefined>(undefined);
+  const [imageKey, setImageKey] = React.useState<number>(0);
   const [cornerSquareStyle, setCornerSquareStyle] =
     React.useState<CornerSquareType>("square");
   const [cornerSquareColor, setCornerSquareColor] =
@@ -73,8 +76,8 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
     React.useState<CornerDotType>("square");
   const [cornerDotColor, setCornerDotColor] = React.useState<string>("#000000");
   const [currentErrorCorrectionLevel, setCurrentErrorCorrectionLevel] =
-    React.useState<ErrorCorrectionLevel>("L");
-  const [imageSize, setImageSize] = React.useState<number>(1);
+    React.useState<ErrorCorrectionLevel>("M");
+  const [imageSize, setImageSize] = React.useState<number>(0.3);
   const [imageMargin, setImageMargin] = React.useState<number>(0);
   const [formData, setFormData] = React.useState<FormDataType | null>(null);
 
@@ -99,6 +102,8 @@ export const QRCodeGeneratorProvider: React.FC<{ children: ReactNode }> = ({
         setHeight,
         image,
         setImage,
+        imageKey,
+        setImageKey,
         cornerSquareStyle,
         setCornerSquareStyle,
         cornerSquareColor,

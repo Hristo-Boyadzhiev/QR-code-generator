@@ -1,13 +1,12 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./DotColor.module.css";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function DotColor() {
   const { setDotColor } = useQRCodeGeneratorContext();
   const { control } = useFormContext();
   return (
-    <div className={styles["dot-color-container"]}>
-      <label htmlFor="dotColor">dot color:</label>
+    <article>
+      <label htmlFor="dotColor">color:</label>
       <Controller
         name="dotColor"
         control={control}
@@ -24,6 +23,6 @@ export default function DotColor() {
           />
         )}
       />
-    </div>
+    </article>
   );
 }

@@ -1,30 +1,29 @@
 import { Controller, useFormContext } from "react-hook-form";
 import { DotTypes } from "../../../enums/DotTypes";
 import { DotType } from "qr-code-styling";
-import styles from "./DotsType.module.css";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
-export default function DotsType() {
+export default function DotStyle() {
   const { setDotType } = useQRCodeGeneratorContext();
   const { control } = useFormContext();
 
   return (
-    <div className={styles["dot-type-container"]}>
-      <label htmlFor="dotType">dot type:</label>
+    <article>
+      <label htmlFor="dotStyle">style:</label>
       <Controller
-        name="dotType"
+        name="dotStyle"
         control={control}
         render={({ field }) => (
           <select
             {...field}
             onChange={(e) => {
-              const selectedDotType = e.target.value as DotType;
-              field.onChange(selectedDotType);
-              setDotType(selectedDotType);
+              const selectedDotStyle = e.target.value as DotType;
+              field.onChange(selectedDotStyle);
+              setDotType(selectedDotStyle);
             }}
           >
             <option value="" disabled>
-              Dot type
+              Dot style
             </option>
             {Object.values(DotTypes).map((dotType) => (
               <option key={dotType} value={dotType.toLowerCase()}>
@@ -34,6 +33,6 @@ export default function DotsType() {
           </select>
         )}
       />
-    </div>
+    </article>
   );
 }

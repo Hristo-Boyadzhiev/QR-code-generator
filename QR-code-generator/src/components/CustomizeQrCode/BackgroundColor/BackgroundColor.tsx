@@ -1,13 +1,12 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./BackgroundColor.module.css";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function BackgroundColor() {
   const { setBackgroundColor } = useQRCodeGeneratorContext();
   const { control } = useFormContext();
   return (
-    <div className={styles["background-color-container"]}>
-      <label htmlFor="backgroundColor">background color:</label>
+    <article>
+      <label htmlFor="backgroundColor">color:</label>
       <Controller
         name="backgroundColor"
         control={control}
@@ -24,6 +23,6 @@ export default function BackgroundColor() {
           />
         )}
       />
-    </div>
+    </article>
   );
 }

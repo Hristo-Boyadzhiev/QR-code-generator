@@ -20,7 +20,9 @@ export function Accordion({ title, children }: AccordionProps) {
         <h3>{title}</h3>
         <span>{isOpen ? "-" : "+"}</span>
       </header>
-      {isOpen && <div className={styles["accordion-content"]}>{children}</div>}
+      {isOpen && (
+        <section className={styles["accordion-content"]}>{children}</section>
+      )}
     </div>
   );
 }

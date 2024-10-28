@@ -1,5 +1,4 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./ImageSize.module.css";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function ImageSize() {
@@ -7,8 +6,8 @@ export default function ImageSize() {
   const { control } = useFormContext();
 
   return (
-    <div className={styles["image-size-container"]}>
-      <label htmlFor="imageSize">image size:</label>
+    <article>
+      <label htmlFor="imageSize">size:</label>
       <Controller
         name="imageSize"
         control={control}
@@ -31,6 +30,6 @@ export default function ImageSize() {
           />
         )}
       />
-    </div>
+    </article>
   );
 }

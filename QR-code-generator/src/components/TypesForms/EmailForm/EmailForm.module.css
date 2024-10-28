@@ -6,7 +6,7 @@
 
   .error-message {
     color: red;
-    /* max-width: 200px; */
+    font-size: 0.7em;
     white-space: normal; 
     overflow-wrap: break-word;
 }

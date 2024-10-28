@@ -1,5 +1,4 @@
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./Height.module.css";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function Height() {
@@ -7,7 +6,7 @@ export default function Height() {
   const { control } = useFormContext();
 
   return (
-    <div className={styles["height-container"]}>
+    <article>
       <label htmlFor="height">Height:</label>
       <Controller
         name="height"
@@ -27,6 +26,6 @@ export default function Height() {
           />
         )}
       />
-    </div>
+    </article>
   );
 }

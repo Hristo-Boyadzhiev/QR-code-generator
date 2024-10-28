@@ -13,11 +13,11 @@ export default function useGetSchema() {
       return smsSchema;
     case "URL":
       return urlSchema;
-    case "PhoneNumber":
+    case "Phone Number":
       return phoneNumberSchema;
-    case "Email":
+    case "E-mail":
       return emailSchema;
-    case "WiFi":
+    case "Wi-Fi":
       return wiFiSchema;
     case "Location":
       return locationSchema;

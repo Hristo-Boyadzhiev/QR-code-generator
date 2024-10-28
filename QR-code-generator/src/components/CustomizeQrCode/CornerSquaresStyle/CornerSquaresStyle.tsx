@@ -1,8 +1,6 @@
 import { Controller, useFormContext } from "react-hook-form";
-
 import { CornerSquareType } from "qr-code-styling";
 import { CornerSquareTypes } from "../../../enums/CornerSquareTypes";
-import styles from "./CornerSquaresStyle.module.css";
 import { useQRCodeGeneratorContext } from "../../../hooks/useQRCodeGeneratorContext";
 
 export default function CornerSquareStyle() {
@@ -10,8 +8,8 @@ export default function CornerSquareStyle() {
   const { control } = useFormContext();
 
   return (
-    <div className={styles["corner-square-style-container"]}>
-      <label htmlFor="cornerSquareStyle">corner square style:</label>
+    <article>
+      <label htmlFor="cornerSquareStyle">style:</label>
       <Controller
         name="cornerSquareStyle"
         control={control}
@@ -39,6 +37,6 @@ export default function CornerSquareStyle() {
           </select>
         )}
       />
-    </div>
+    </article>
   );
 }

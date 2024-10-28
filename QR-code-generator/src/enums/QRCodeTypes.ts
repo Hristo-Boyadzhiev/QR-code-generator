@@ -1,8 +1,8 @@
 export enum QRCodeTypes {
   SMS = "SMS",
   URL = "URL",
-  PhoneNumber = "PhoneNumber",
-  Email = "Email",
-  WiFi = "WiFi",
+  PhoneNumber = "Phone Number",
+  Email = "E-mail",
+  WiFi = "Wi-Fi",
   Location = "Location",
 }

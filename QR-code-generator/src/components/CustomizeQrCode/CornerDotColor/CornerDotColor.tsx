@@ -5,8 +5,8 @@ export default function CornerDotColor() {
   const { setCornerDotColor } = useQRCodeGeneratorContext();
   const { control } = useFormContext();
   return (
-    <div>
-      <label htmlFor="cornerDotColor">corner dot color:</label>
+    <article>
+      <label htmlFor="cornerDotColor">color:</label>
       <Controller
         name="cornerDotColor"
         control={control}
@@ -23,6 +23,6 @@ export default function CornerDotColor() {
           />
         )}
       />
-    </div>
+    </article>
   );
 }

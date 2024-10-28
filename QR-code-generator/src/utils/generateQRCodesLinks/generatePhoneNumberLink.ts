@@ -8,6 +8,6 @@ export default function generatePhoneNumberLink(
   if (!isPhoneNumberFormData(data)) {
     throw Error("Invalid Phone Number");
   }
-  const generatedPhoneNumberLink = `tel:${data.countryCode}${data.phoneNumber}`;
+  const generatedPhoneNumberLink = `tel:${data.countryCodePhoneNumberForm}${data.phoneNumberPhoneNumberForm}`;
   setQrCodeLink(generatedPhoneNumberLink);
 }
