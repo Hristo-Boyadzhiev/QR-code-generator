@@ -5,4 +5,5 @@ export enum QRCodeTypes {
   Email = "E-mail",
   WiFi = "Wi-Fi",
   Location = "Location",
+  Event = "Event",
 }

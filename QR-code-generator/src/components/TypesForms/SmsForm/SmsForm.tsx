@@ -67,12 +67,12 @@ export default function SmsForm() {
         </div>
       </div>
       <Controller
-        name="message"
+        name="messageSmsForm"
         control={control}
         render={({ field }) => (
           <textarea
             {...field}
-            id="message"
+            id="messageSmsForm"
             cols={30}
             rows={5}
             placeholder="Enter your message"

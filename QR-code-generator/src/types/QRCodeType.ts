@@ -4,4 +4,5 @@ export type QRCodeType =
   | "Phone Number"
   | "E-mail"
   | "Wi-Fi"
-  | "Location";
+  | "Location"
+  | "Event";

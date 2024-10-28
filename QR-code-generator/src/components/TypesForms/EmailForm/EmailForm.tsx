@@ -51,12 +51,12 @@ export default function EmailForm() {
         </p>
       )}
       <Controller
-        name="message"
+        name="messageEmailForm"
         control={control}
         render={({ field }) => (
           <textarea
             {...field}
-            id="message"
+            id="messageEmailForm"
             cols={30}
             rows={5}
             placeholder="Enter your message"

@@ -1,4 +1,3 @@
-// Accordion.tsx
 import React, { ReactNode } from "react";
 import styles from "./Accordion.module.css";
 

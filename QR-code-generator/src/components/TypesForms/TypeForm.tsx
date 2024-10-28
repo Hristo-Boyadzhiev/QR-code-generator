@@ -25,23 +25,7 @@ export default function TypeForm() {
     resolver: schema
       ? yupResolver(schema as ObjectSchema<FormDataType>)
       : undefined,
-    // mode: "onChange", //validation on change
     defaultValues: qrCodeType ? getDefaultValues(qrCodeType) : undefined,
-    // defaultValues: {
-    //   email: "",
-    //   subject: "",
-    //   message: "",
-    //   countryCodeSmsForm: "",
-    //   phoneNumberSmsForm: "",
-    //   countryCodePhoneNumberForm: "",
-    //   phoneNumberPhoneNumberForm: "",
-    //   url: "",
-    //   encryptionType: undefined,
-    //   networkName: "",
-    //   password: "",
-    //   hiddenNetwork: false,
-    //   autoconnect: false,
-    // },
   });
 
   React.useEffect(() => {

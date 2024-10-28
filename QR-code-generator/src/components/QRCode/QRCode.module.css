@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     padding: 2em;
-    /* border-left: 1px solid grey; */
 }
 
 .qr-code-container {

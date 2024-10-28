@@ -8,11 +8,11 @@ export const emailSchema = yup.object({
     .required("The e-mail is required")
     .matches(emailRegex, "Invalid email format"),
   subject: yup.string().required("The subject is required"),
-  message: yup.string(),
+  messageEmailForm: yup.string(),
 });
 
 export interface EmailFormData extends yup.InferType<typeof emailSchema> {
   email: string;
   subject: string;
-  message?: string;
+  messageEmailForm?: string;
 }

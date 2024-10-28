@@ -9,8 +9,8 @@ export default function generateSmsLink(
     throw new Error("Invalid SMS data");
   }
 
-  const messagePart = data.message
-    ? `&body=${encodeURIComponent(data.message)}`
+  const messagePart = data.messageSmsForm
+    ? `&body=${encodeURIComponent(data.messageSmsForm)}`
     : "";
 
   const generatedSmsLink = `sms:${data.countryCodeSmsForm}${data.phoneNumberSmsForm}${messagePart}`;

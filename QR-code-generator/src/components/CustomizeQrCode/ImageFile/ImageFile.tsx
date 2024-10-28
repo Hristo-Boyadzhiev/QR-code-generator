@@ -51,7 +51,6 @@ export default function ImageFile() {
               accept="image/*"
               style={{ display: "none" }}
               onChange={(e) => handleFileChange(e, field.onChange)}
-              // value=""
             />
             <button
               type="button"
