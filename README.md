@@ -19,7 +19,7 @@ This app is under development.
   
 - Yup: A JavaScript schema builder for value parsing and validation. It is used under the MIT License. You can find it [here](https://github.com/jquense/yup/blob/master/LICENSE.md).
 
-- day.js: A minimalist JavaScript date library for parsing, validating, manipulating, and displaying dates and times. It is used under the [MIT License](https://github.com/iamkun/dayjs/blob/dev/LICENSE).
+- day.js: A minimalist JavaScript date library for parsing, validating, manipulating, and displaying dates and times. It is used under the MIT License. You can find it [here](https://github.com/iamkun/dayjs/blob/dev/LICENSE).
 
 ### Fonts
 - **Montserrat:** This project uses the Montserrat font, which is licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/). You can learn more about the Montserrat font and its license on [License](https://fonts.google.com/specimen/Montserrat/license).
