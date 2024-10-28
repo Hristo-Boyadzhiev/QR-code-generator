@@ -21,9 +21,9 @@ This app is under development.
 
 - day.js: A minimalist JavaScript date library for parsing, validating, manipulating, and displaying dates and times. It is used under the MIT License. You can find it [here](https://github.com/iamkun/dayjs/blob/dev/LICENSE).
 
-- dayjs-plugin-utc: A plugin for day.js that allows you to work with UTC dates. It is used under the MIT License. You can find it [here](https://github.com/iamkun/dayjs/tree/dev/docs/en/plugin).
+- dayjs-plugin-utc: A plugin for day.js that allows you to work with UTC dates. It is used under the MIT License. You can find it [here](https://github.com/iamkun/dayjs/blob/dev/LICENSE).
   
-- dayjs-plugin-timezone: A plugin for day.js that allows you to work with time zones. It is used under the MIT License. You can find it [here](https://github.com/iamkun/dayjs/tree/dev/docs/en/plugin).
+- dayjs-plugin-timezone: A plugin for day.js that allows you to work with time zones. It is used under the MIT License. You can find it [here](https://github.com/iamkun/dayjs/blob/dev/LICENSE).
 
 ### Fonts
 - **Montserrat:** This project uses the Montserrat font, which is licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/). You can learn more about the Montserrat font and its license on [License](https://fonts.google.com/specimen/Montserrat/license).
