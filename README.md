@@ -19,6 +19,8 @@ This app is under development.
   
 - Yup: A JavaScript schema builder for value parsing and validation. It is used under the MIT License. You can find it [here](https://github.com/jquense/yup/blob/master/LICENSE.md).
 
+- day.js: A minimalist JavaScript date library for parsing, validating, manipulating, and displaying dates and times. It is used under the [MIT License](https://github.com/iamkun/dayjs/blob/dev/LICENSE).
+
 ### Fonts
 - **Montserrat:** This project uses the Montserrat font, which is licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/). You can learn more about the Montserrat font and its license on [License](https://fonts.google.com/specimen/Montserrat/license).
 
@@ -27,7 +29,7 @@ This app is under development.
 - CSS Modules.
 
 ## License
-This project uses several libraries that are licensed under the MIT License, including Vite, React, qr-code-styling, React-hook-form, and Yup. TypeScript is licensed under the Apache License 2.0. Montserrat is licensed under the SIL Open Font License, Version 1.1
+This project uses several libraries that are licensed under the MIT License, including Vite, React, qr-code-styling, React-hook-form, Yup and day.js. TypeScript is licensed under the Apache License 2.0. Montserrat is licensed under the SIL Open Font License, Version 1.1
 
 MIT License allows for free use, modification, and distribution of the code, as long as the original license text and copyright notice are included in all copies or substantial portions of the software.
 
