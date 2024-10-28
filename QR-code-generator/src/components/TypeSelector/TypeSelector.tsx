@@ -32,7 +32,7 @@ export default function TypeSelector() {
           </option>
         ))}
       </select>
-      {qrCodeType && <TypeForm />}
+      {qrCodeType && <TypeForm key={qrCodeType} />}
     </article>
   );
 }
