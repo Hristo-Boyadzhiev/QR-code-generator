@@ -72,32 +72,32 @@ The application is designed to work seamlessly on various devices and screens, e
 ###### SMS form
 <a id="desktop-sms-form"></a>
 
-![image](https://github.com/user-attachments/assets/0259544e-cec5-4b1e-8142-8c33e6958c14)
+![image](https://github.com/user-attachments/assets/03c045f0-19d5-49d7-9fc9-f46a631252bb)
 
 ###### URL form
 <a id="desktop-url-form"></a>
 
-![image](https://github.com/user-attachments/assets/599fc16e-addc-4a00-908e-ab18cc256db4)
+![image](https://github.com/user-attachments/assets/b7c1853b-aa2d-421c-96ba-14921555b9b2)
 
 ###### Phone number form
 <a id="desktop-phone-number-form"></a>
 
-![image](https://github.com/user-attachments/assets/dc3021ee-1a9a-4d61-949d-d134c71791de)
+![image](https://github.com/user-attachments/assets/56da62b2-6d65-454d-aec1-321e8a200137)
 
 ###### Email form
 <a id="desktop-email-form"></a>
 
-![image](https://github.com/user-attachments/assets/00a917a7-0c32-4c88-9ae4-406ed81acfef)
+![image](https://github.com/user-attachments/assets/9f780315-ec57-4574-a304-d314d5eb11cc)
 
 ###### Wi-fi form
 <a id="desktop-wi-fi-form"></a>
 
-![image](https://github.com/user-attachments/assets/2dfda021-aae3-4ae9-9424-ad88071ef4d5)
+![image](https://github.com/user-attachments/assets/6843783a-59ca-4e1f-9f86-6c5a07bba654)
 
 ###### Location form
 <a id="desktop-location-form"></a>
 
-![image](https://github.com/user-attachments/assets/0a81758b-6d27-4d36-83c8-cb19100b1623)
+![image](https://github.com/user-attachments/assets/22177b6a-5d5c-4904-869d-03324b05095f)
 
 ##### Generate QR code
 <a id="desktop-generate-qr-code"></a>
