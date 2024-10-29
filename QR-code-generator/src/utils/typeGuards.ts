@@ -1,5 +1,4 @@
 import { EmailFormData } from "../schemas/emailSchema";
-import { EventFormData } from "../schemas/eventSchema";
 import { LocationFormData } from "../schemas/locationSchema";
 import { PhoneNumberFormData } from "../schemas/phoneNumberSchema";
 import { SmsFormData } from "../schemas/smsSchema";
@@ -56,18 +55,5 @@ export function isLocationFormData(
   return (
     typeof (data as LocationFormData).latitude === "string" &&
     typeof (data as LocationFormData).longitude === "string"
-  );
-}
-
-export function isEventFormData(data: FormDataType): data is EventFormData {
-  return (
-    (typeof (data as EventFormData).eventTitle === "string" &&
-      (data as EventFormData).eventStartDateAndHour instanceof Date &&
-      (data as EventFormData).eventEndDateAndHour instanceof Date &&
-      (data as EventFormData).eventLocation === undefined) ||
-    (typeof (data as EventFormData).eventLocation === "string" &&
-      (data as EventFormData).eventLocation !== "" &&
-      (data as EventFormData).descriptionEventForm === undefined) ||
-    typeof (data as EventFormData).descriptionEventForm === "string"
   );
 }

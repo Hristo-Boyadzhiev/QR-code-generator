@@ -1,6 +1,5 @@
 import { FormDataType } from "../types/FormDataType";
 import generateEmailLink from "../utils/generateQRCodesLinks/generateEmailLink";
-import generateEventLink from "../utils/generateQRCodesLinks/generateEventLink";
 import generateLocationLink from "../utils/generateQRCodesLinks/generateLocationLink";
 import generatePhoneNumberLink from "../utils/generateQRCodesLinks/generatePhoneNumberLink";
 import generateSmsLink from "../utils/generateQRCodesLinks/generateSmsLink";
@@ -30,9 +29,6 @@ export default function useGenerateLink() {
         break;
       case "Location":
         generateLocationLink(data, setQrCodeLink);
-        break;
-      case "Event":
-        generateEventLink(data, setQrCodeLink);
         break;
       default:
         throw Error("Unknown QR code type");
