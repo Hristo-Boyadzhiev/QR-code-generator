@@ -62,7 +62,7 @@ You can see a preview of the generated QR code and download it in a suitable for
 #### Responsive Design: 
 The application is designed to work seamlessly on various devices and screens, ensuring an optimal user experience whether you are using it on a desktop computer, tablet, or mobile phone.
 
-### Screenshots
+## Screenshots
 
 #### Desktop version
 
