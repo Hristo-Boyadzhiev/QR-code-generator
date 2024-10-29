@@ -38,7 +38,11 @@ export default function TypeForm() {
       >;
       const subscription = methods.watch((values) => {
         const anyFieldFilled = fieldsToWatch.some((field) => {
-          return values[field] !== "" && values[field] !== undefined;
+          return (
+            values[field] !== "" &&
+            values[field] !== undefined &&
+            values[field] !== false
+          );
         });
         setIsVisibleResetButton(anyFieldFilled);
       });
