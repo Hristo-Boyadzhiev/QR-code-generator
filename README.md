@@ -93,6 +93,10 @@ The application is designed to work seamlessly on various devices and screens, e
 
 ![image](https://github.com/user-attachments/assets/0a81758b-6d27-4d36-83c8-cb19100b1623)
 
+
+
+
+
 ## Tech Stack
 
 ### Build Tool
