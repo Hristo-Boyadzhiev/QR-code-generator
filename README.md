@@ -178,11 +178,11 @@ The application is designed to work seamlessly on various devices and screens, e
 - TypeScript: A superset of JavaScript that compiles to plain JavaScript. It is used under the Apache License 2.0. You can find it [here](https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt).
 
 ### Libraries
-- React: A JavaScript library for building user interfaces. It is used under the MIT License. You can find it [here](https://github.com/facebook/react/blob/main/LICENSE)
+- React: A JavaScript library for building user interfaces. It is used under the MIT License. You can find it [here](https://github.com/facebook/react/blob/main/LICENSE).
   
 - Qr-code-styling: A React component for generating styled QR codes. It is used under the MIT License. You can find the license [here](https://github.com/kozakdenys/qr-code-styling/blob/master/LICENSE).
   
-- React-hook-form: A library for managing forms in React. It is used under the MIT License. You can find it [here](https://github.com/react-hook-form/react-hook-form/blob/master/LICENSE)
+- React-hook-form: A library for managing forms in React. It is used under the MIT License. You can find it [here](https://github.com/react-hook-form/react-hook-form/blob/master/LICENSE).
   
 - Yup: A JavaScript schema builder for value parsing and validation. It is used under the MIT License. You can find it [here](https://github.com/jquense/yup/blob/master/LICENSE.md).
 
