@@ -92,7 +92,7 @@ The application is designed to work seamlessly on various devices and screens, e
 ###### Wi-fi form
 <a id="desktop-wi-fi-form"></a>
 
-![image](https://github.com/user-attachments/assets/6843783a-59ca-4e1f-9f86-6c5a07bba654)
+![image](https://github.com/user-attachments/assets/4493c9a8-a653-422b-8040-786882de56a9)
 
 ###### Location form
 <a id="desktop-location-form"></a>
@@ -142,7 +142,7 @@ The application is designed to work seamlessly on various devices and screens, e
 ###### Wi-fi form
 <a id="mobile-wi-fi-form"></a>
 
-![image](https://github.com/user-attachments/assets/ad33835a-ca4b-4dfc-9423-431f2a2ce0a9)
+![image](https://github.com/user-attachments/assets/b95f9b9a-4d62-4927-971b-76d7baedaa15)
 
 ###### Location form
 <a id="mobile-location-form"></a>
