@@ -44,13 +44,17 @@ QR Code Generator is an application that allows users to easily create and custo
   
 - **Location:** Create a QR code that shows a specific location on the map, making navigation easier.
   
-#### Design Customization: The application offers options for customizing the design of QR codes, allowing users to adapt the appearance of the codes to their preferences and needs.
+#### Design Customization: 
+The application offers options for customizing the design of QR codes, allowing users to adapt the appearance of the codes to their preferences and needs.
 
-#### Easy to Use: The interface is intuitive, enabling anyone, regardless of technical knowledge, to generate QR codes. Simply fill in the required fields and generate the code quickly and easily.
+#### Easy to Use: 
+The interface is intuitive, enabling anyone, regardless of technical knowledge, to generate QR codes. Simply fill in the required fields and generate the code quickly and easily.
 
-#### Preview and Download: You can see a preview of the generated QR code and download it in a suitable format for print or digital use.
+#### Preview and Download: 
+You can see a preview of the generated QR code and download it in a suitable format for print or digital use.
 
-#### Responsive Design: The application is designed to work seamlessly on various devices and screens, ensuring an optimal user experience whether you are using it on a desktop computer, tablet, or mobile phone.
+#### Responsive Design: 
+The application is designed to work seamlessly on various devices and screens, ensuring an optimal user experience whether you are using it on a desktop computer, tablet, or mobile phone.
 
 ### Screenshots
 
