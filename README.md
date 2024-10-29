@@ -60,6 +60,32 @@ The application is designed to work seamlessly on various devices and screens, e
 
 #### Desktop version
 
+##### QR code types forms
+
+###### SMS form
+
+![image](https://github.com/user-attachments/assets/0259544e-cec5-4b1e-8142-8c33e6958c14)
+
+###### URL form
+
+![image](https://github.com/user-attachments/assets/599fc16e-addc-4a00-908e-ab18cc256db4)
+
+###### Phone number form
+
+![image](https://github.com/user-attachments/assets/dc3021ee-1a9a-4d61-949d-d134c71791de)
+
+###### Email form
+
+![image](https://github.com/user-attachments/assets/00a917a7-0c32-4c88-9ae4-406ed81acfef)
+
+###### Wi-fi form
+
+![image](https://github.com/user-attachments/assets/2dfda021-aae3-4ae9-9424-ad88071ef4d5)
+
+###### Location form
+
+![image](https://github.com/user-attachments/assets/0a81758b-6d27-4d36-83c8-cb19100b1623)
+
 ## Tech Stack
 
 ### Build Tool
