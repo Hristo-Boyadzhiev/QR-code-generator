@@ -6,9 +6,6 @@ import { UrlFormData } from "../schemas/urlSchema";
 import { WiFiFormData } from "../schemas/wiFiSchema";
 import { FormDataType } from "../types/FormDataType";
 
-// TODO: Проверка дали са правилни и не трябва ли да са като isEventFormData (проверки за undefined)
-// за незадължителните полета
-
 export function isSmsFormData(data: FormDataType): data is SmsFormData {
   return (
     typeof (data as SmsFormData).countryCodeSmsForm === "string" &&

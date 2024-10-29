@@ -9,3 +9,9 @@
     justify-content: space-around;
     gap: 2em;
 }
+
+.generate-qr-code-button:disabled {
+    background-color: lightgrey;
+    color: grey;
+    cursor: not-allowed;
+  }

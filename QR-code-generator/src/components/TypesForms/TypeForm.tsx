@@ -26,6 +26,7 @@ export default function TypeForm() {
       ? yupResolver(schema as ObjectSchema<FormDataType>)
       : undefined,
     defaultValues: qrCodeType ? getDefaultValues(qrCodeType) : undefined,
+    mode: "onChange",
   });
 
   React.useEffect(() => {
@@ -64,7 +65,13 @@ export default function TypeForm() {
           <button type="button" onClick={handleReset}>
             reset
           </button>
-          <button type="submit">generate qr code</button>
+          <button
+            type="submit"
+            disabled={!methods.formState.isValid}
+            className={styles["generate-qr-code-button"]}
+          >
+            generate qr code
+          </button>
         </article>
       </form>
     </RHFProvider>
