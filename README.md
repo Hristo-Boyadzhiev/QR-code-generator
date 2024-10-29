@@ -122,33 +122,43 @@ The application is designed to work seamlessly on various devices and screens, e
 ###### SMS form
 <a id="mobile-sms-form"></a>
 
+![image](https://github.com/user-attachments/assets/96b08b29-f9b5-4850-89b9-2fe19ed3629e)
 
 ###### URL form
 <a id="mobile-url-form"></a>
 
+![image](https://github.com/user-attachments/assets/0b9a0940-c269-4515-b9f5-f7f81d0d7ab5)
 
 ###### Phone number form
 <a id="mobile-phone-number-form"></a>
 
+![image](https://github.com/user-attachments/assets/2cac6d1e-7750-49f1-8a90-ff2871a6dacb)
 
 ###### Email form
 <a id="mobile-email-form"></a>
 
+![image](https://github.com/user-attachments/assets/5d7e8822-49f0-4600-add3-58c690f3f861)
 
 ###### Wi-fi form
 <a id="mobile-wi-fi-form"></a>
 
+![image](https://github.com/user-attachments/assets/ad33835a-ca4b-4dfc-9423-431f2a2ce0a9)
 
 ###### Location form
 <a id="mobile-location-form"></a>
 
+![image](https://github.com/user-attachments/assets/eb7bf7a7-cd3a-403e-b13f-15e014297b7a)
 
 ##### Generate QR code
 <a id="mobile-generate-qr-code"></a>
 
+![image](https://github.com/user-attachments/assets/aab9240c-846e-4fbd-880f-e77f4e98a53c)
 
 ##### Customize QR code form
 <a id="mobile-customize-qr-code-form"></a>
+
+![image](https://github.com/user-attachments/assets/5513ca3a-aa10-484d-9a2a-72b03ba52f49)
+![image](https://github.com/user-attachments/assets/67af1fc2-4cbd-46b3-a673-12d600f8d1a6)
 
 
 ##### Customized QR Code
