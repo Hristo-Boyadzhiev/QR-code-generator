@@ -1,6 +1,64 @@
-# QR-code-generator
+# QR code generator
 
-This app is under development.
+## Table of contents
+
+- [Overview](#overview)
+- [Screenshots](#screenshots)
+  - [Desktop version](#desktop-version)
+    - [Reset message](#desktop-reset-message)
+    - [Game field](#desktop-game-field)
+    - [Game rules](#desktop-game-rules)
+    - [Computer choice](#desktop-computer-choice)
+    - [User winner](#desktop-user-winner)
+    - [Computer winner](#desktop-computer-winner)
+    - [Draw](#desktop-draw)
+  - [Mobile version](#mobile-version)
+    - [Reset message](#mobile-reset-message)
+    - [Game field](#mobile-game-field)
+    - [Game rules](#mobile-game-rules)
+    - [Computer choice](#mobile-computer-choice)
+    - [User winner](#mobile-user-winner)
+    - [Computer winner](#mobile-computer-winner)
+    - [Draw](#mobile-draw)
+- [Tech Stack](#tech-stack)
+- [License](#license)
+- [Installation and Usage](#installation-and-usage)
+
+## Overview
+
+QR Code Generator is an application that allows users to easily create and customize various types of QR codes.
+
+### Key Features:
+
+#### Variety of QR Code Types:
+
+- **SMS:** Generate a QR code that allows users to send an SMS to a specified number with a pre-defined message.
+  
+- **URL:** Create a QR code that directs users to a specific website when scanned.
+  
+- **Phone Number:** Generate a QR code that automatically dials a specified phone number.
+  
+- **Email:** Create a QR code that facilitates sending an email with a pre-filled address, subject, and message.
+  
+- **Wi-Fi:** Generate a QR code that allows users to connect to a specified Wi-Fi network.
+  
+- **Location:** Create a QR code that shows a specific location on the map, making navigation easier.
+  
+#### Design Customization: 
+The application offers options for customizing the design of QR codes, allowing users to adapt the appearance of the codes to their preferences and needs.
+
+#### Easy to Use: 
+The interface is intuitive, enabling anyone, regardless of technical knowledge, to generate QR codes. Simply fill in the required fields and generate the code quickly and easily.
+
+#### Preview and Download: 
+You can see a preview of the generated QR code and download it in a suitable format for print or digital use.
+
+#### Responsive Design: 
+The application is designed to work seamlessly on various devices and screens, ensuring an optimal user experience whether you are using it on a desktop computer, tablet, or mobile phone.
+
+### Screenshots
+
+#### Desktop version
 
 ## Tech Stack
 
