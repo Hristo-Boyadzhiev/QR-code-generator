@@ -112,11 +112,7 @@ The application is designed to work seamlessly on various devices and screens, e
 ##### Customized QR Code
 <a id="desktop-customized-qr-code"></a>
 
-![image](https://github.com/user-attachments/assets/8bf26d9e-d14c-4bef-9c12-18f5c66022da)
-
-
-
-
+![image](https://github.com/user-attachments/assets/dac29030-9b89-47d1-a695-2977a6be4275)
 
 #### Mobile version
 
@@ -157,6 +153,7 @@ The application is designed to work seamlessly on various devices and screens, e
 
 ##### Customized QR Code
 <a id="mobile-customized-qr-code"></a>
+
 ![image](https://github.com/user-attachments/assets/1c193b40-b369-4fc9-9f79-28082349544e)
 ![image](https://github.com/user-attachments/assets/55a0a251-b2cd-4606-b856-66810b36ae69)
 
