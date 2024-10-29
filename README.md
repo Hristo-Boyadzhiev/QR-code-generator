@@ -12,7 +12,9 @@
       - [Email form](#desktop-email-form)
       - [Wi-fi form](#desktop-wi-fi-form)
       - [Location form](#desktop-location-form)
-  - [Generate QR code](#desktop-generate-qr-code)
+    - [Generate QR code](#desktop-generate-qr-code)
+    - [Customize QR code form](#desktop-customize-qr-code-form)
+    - [Customized QR Code](#desktop-customized-qr-code)
   - [Mobile version](#mobile-version)
     - [Reset message](#mobile-reset-message)
     - [Game field](#mobile-game-field)
@@ -95,10 +97,19 @@ The application is designed to work seamlessly on various devices and screens, e
 ![image](https://github.com/user-attachments/assets/0a81758b-6d27-4d36-83c8-cb19100b1623)
 
 ##### Generate QR code
+<a id="desktop-generate-qr-code"></a>
 
 ![image](https://github.com/user-attachments/assets/0e95b4ea-1efb-47bc-9002-8e4011fa3fd5)
 
+##### Customize QR code form
+<a id="desktop-customize-qr-code-form"></a>
 
+![image](https://github.com/user-attachments/assets/7d5dc262-2985-451f-aded-ae7472f00d94)
+
+##### Customized QR Code
+<a id="desktop-customized-qr-code"></a>
+
+![image](https://github.com/user-attachments/assets/8bf26d9e-d14c-4bef-9c12-18f5c66022da)
 
 
 ## Tech Stack
