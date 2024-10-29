@@ -16,13 +16,16 @@
     - [Customize QR code form](#desktop-customize-qr-code-form)
     - [Customized QR Code](#desktop-customized-qr-code)
   - [Mobile version](#mobile-version)
-    - [Reset message](#mobile-reset-message)
-    - [Game field](#mobile-game-field)
-    - [Game rules](#mobile-game-rules)
-    - [Computer choice](#mobile-computer-choice)
-    - [User winner](#mobile-user-winner)
-    - [Computer winner](#mobile-computer-winner)
-    - [Draw](#mobile-draw)
+    - [QR code types forms](#mobile-qr-code-types-forms)
+      - [SMS form](#mobile-sms-form)
+      - [URL form](#mobile-url-form)
+      - [Phone number form](#mobile-phone-number-form)
+      - [Email form](#mobile-email-form)
+      - [Wi-fi form](#mobile-wi-fi-form)
+      - [Location form](#mobile-location-form)
+    - [Generate QR code](#mobile-generate-qr-code)
+    - [Customize QR code form](#mobile-customize-qr-code-form)
+    - [Customized QR Code](#mobile-customized-qr-code)
 - [Tech Stack](#tech-stack)
 - [License](#license)
 - [Installation and Usage](#installation-and-usage)
@@ -110,6 +113,53 @@ The application is designed to work seamlessly on various devices and screens, e
 <a id="desktop-customized-qr-code"></a>
 
 ![image](https://github.com/user-attachments/assets/8bf26d9e-d14c-4bef-9c12-18f5c66022da)
+
+
+
+
+
+#### Mobile version
+
+##### QR code types forms
+<a id="mobile-qr-code-types-forms"></a>
+
+###### SMS form
+<a id="mobile-sms-form"></a>
+
+
+###### URL form
+<a id="mobile-url-form"></a>
+
+
+###### Phone number form
+<a id="mobile-phone-number-form"></a>
+
+
+###### Email form
+<a id="mobile-email-form"></a>
+
+
+###### Wi-fi form
+<a id="mobile-wi-fi-form"></a>
+
+
+###### Location form
+<a id="mobile-location-form"></a>
+
+
+##### Generate QR code
+<a id="mobile-generate-qr-code"></a>
+
+
+##### Customize QR code form
+<a id="mobile-customize-qr-code-form"></a>
+
+
+##### Customized QR Code
+<a id="mobile-customized-qr-code"></a>
+![image](https://github.com/user-attachments/assets/1c193b40-b369-4fc9-9f79-28082349544e)
+![image](https://github.com/user-attachments/assets/55a0a251-b2cd-4606-b856-66810b36ae69)
+
 
 
 ## Tech Stack
