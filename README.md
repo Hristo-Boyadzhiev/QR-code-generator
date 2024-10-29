@@ -12,6 +12,7 @@
       - [Email form](#desktop-email-form)
       - [Wi-fi form](#desktop-wi-fi-form)
       - [Location form](#desktop-location-form)
+  - [Generate QR code](#desktop-generate-qr-code)
   - [Mobile version](#mobile-version)
     - [Reset message](#mobile-reset-message)
     - [Game field](#mobile-game-field)
@@ -93,6 +94,9 @@ The application is designed to work seamlessly on various devices and screens, e
 
 ![image](https://github.com/user-attachments/assets/0a81758b-6d27-4d36-83c8-cb19100b1623)
 
+##### Generate QR code
+
+![image](https://github.com/user-attachments/assets/0e95b4ea-1efb-47bc-9002-8e4011fa3fd5)
 
 
 
