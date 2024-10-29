@@ -10,7 +10,8 @@
     gap: 2em;
 }
 
-.generate-qr-code-button:disabled {
+.generate-qr-code-button:disabled,
+.reset-button:disabled {
     background-color: lightgrey;
     color: grey;
     cursor: not-allowed;

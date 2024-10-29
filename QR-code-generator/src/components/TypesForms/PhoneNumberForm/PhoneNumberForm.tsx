@@ -15,7 +15,14 @@ export default function PhoneNumberForm() {
             name="countryCodePhoneNumberForm"
             control={control}
             render={({ field }) => (
-              <select {...field} required>
+              <select
+                {...field}
+                required
+                onChange={(e) => {
+                  const value = e.target.value;
+                  field.onChange(value);
+                }}
+              >
                 <option value="" disabled>
                   Select country code *
                 </option>

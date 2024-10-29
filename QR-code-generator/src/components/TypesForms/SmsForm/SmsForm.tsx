@@ -7,6 +7,7 @@ export default function SmsForm() {
     control,
     formState: { errors },
   } = useFormContext();
+
   return (
     <article className={styles["sms-form-container"]}>
       <div className={styles["phone-number-container"]}>
@@ -15,7 +16,14 @@ export default function SmsForm() {
             name="countryCodeSmsForm"
             control={control}
             render={({ field }) => (
-              <select {...field} required>
+              <select
+                {...field}
+                required
+                onChange={(e) => {
+                  const value = e.target.value;
+                  field.onChange(value);
+                }}
+              >
                 <option value="" disabled>
                   Select country code *
                 </option>

@@ -13,8 +13,10 @@ import { ObjectSchema } from "yup";
 import React from "react";
 import { getDefaultValues } from "../../utils/getDefaultValues";
 import { useQRCodeGeneratorContext } from "../../hooks/useQRCodeGeneratorContext";
+import { getQRCodeFields } from "../../utils/getQRCodeFields";
 
 export default function TypeForm() {
+  const [isVisibleResetButton, setIsVisibleResetButton] = React.useState(false);
   const formContent = useGetFormContent();
   const schema = useGetSchema();
   const generateLink = useGenerateLink();
@@ -30,12 +32,25 @@ export default function TypeForm() {
   });
 
   React.useEffect(() => {
+    if (qrCodeType) {
+      const fieldsToWatch = getQRCodeFields(qrCodeType) as Array<
+        keyof FormDataType
+      >;
+      const subscription = methods.watch((values) => {
+        const anyFieldFilled = fieldsToWatch.some((field) => {
+          return values[field] !== "" && values[field] !== undefined;
+        });
+        setIsVisibleResetButton(anyFieldFilled);
+      });
+      return () => subscription.unsubscribe();
+    }
+  }, [qrCodeType]);
+
+  React.useEffect(() => {
     if (formData) {
       methods.reset(formData);
-    } else {
-      if (qrCodeType) {
-        methods.reset(getDefaultValues(qrCodeType));
-      }
+    } else if (qrCodeType) {
+      methods.reset(getDefaultValues(qrCodeType));
     }
   }, [formData, qrCodeType]);
 
@@ -48,7 +63,17 @@ export default function TypeForm() {
     if (qrCodeType) {
       methods.reset(getDefaultValues(qrCodeType));
       setQrCodeLink(null);
-      setFormData(null);
+
+      const fieldsToWatch = getQRCodeFields(qrCodeType) as Array<
+        keyof FormDataType
+      >;
+
+      const newFormData: FormDataType = { ...formData } as FormDataType;
+      fieldsToWatch.forEach((field) => {
+        delete newFormData[field];
+      });
+
+      setFormData(newFormData);
     }
   };
 
@@ -62,9 +87,15 @@ export default function TypeForm() {
         {formContent}
 
         <article className={styles["buttons"]}>
-          <button type="button" onClick={handleReset}>
+          <button
+            type="button"
+            className={styles["reset-button"]} //
+            disabled={!isVisibleResetButton} //
+            onClick={handleReset}
+          >
             reset
           </button>
+
           <button
             type="submit"
             disabled={!methods.formState.isValid}
