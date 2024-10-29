@@ -202,3 +202,20 @@ Apache License 2.0 permits users to use, modify, and distribute the software, bu
 
 Montserrat is licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/), which allows free use, modification, and distribution of the fonts, as long as the original license and copyright notice are included.
 
+## Installation and Usage
+### Step 1: Clone the repository to your local machine:
+### Step 2: Install Dependencies
+Run the following command to install the required dependencies:
+
+```bash
+npm install
+```
+### Step 3: Running the Application
+To start the development server, run:
+
+```bash
+npm run dev
+```
+### Step 4: Open the Application
+Open your browser and navigate to: 
+**http://localhost:5173/**
