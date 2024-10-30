@@ -32,7 +32,7 @@
 
 ## Overview
 
-QR Code Generator is an application that allows users to easily create and customize various types of QR codes.
+QR code generator is an application that allows users to easily create and customize various types of QR codes.
 
 ### Key Features:
 
